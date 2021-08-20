@@ -31,11 +31,11 @@ const Login = () => {
                 <br />
                 <input type='text' id="password" name="password" required placeholder="Contraseña" />
                 <br />
-                <input type="submit" value="Iniciar sesión" />
+                <Link style={{ textDecoration: 'none' }} to="/home"><input type="submit" value="Iniciar sesión" /></Link>
             </form>
 
             <div>
-                <Link style={{ textDecoration: 'none' }} to="/signup">¿Olvidaste tu contraseña?</Link>
+                <Link style={{ textDecoration: 'none' }} to="/search-account">¿Olvidaste tu contraseña?</Link>
                 <span> . </span>
                 <Link style={{ textDecoration: 'none' }} to="/signup">Registrate en Twitter</Link>
             </div>

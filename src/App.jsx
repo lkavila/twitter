@@ -1,16 +1,17 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './views/Login';
-import SignUp from './views/SignUp';
-import Nav from './views/Nav';
+import Login from './views/Auth/Login';
+import SignUp from './views/Auth/SignUp';
 import Home from './views/Home/Home';
+import Root from './views/Auth/index'
+import ResetPasswordStepOne from './views/Auth/ResetPassword/resetStepOne';
+import ResetPasswordStepTwo from './views/Auth/ResetPassword/resetStepTwo';
+import ResetPasswordStepThree from './views/Auth/ResetPassword/resetStepThree';
 
 const App = () => {
   return (
     <main>
       <BrowserRouter>
-        <h1>App</h1>
-        <Nav />
 
         <Switch>
           <Route path="/login">
@@ -21,12 +22,28 @@ const App = () => {
             <SignUp />
           </Route>
 
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+
+          <Route path="/search-account">
+            <ResetPasswordStepOne />
+          </Route>
+
+          <Route path="/send-reset-password">
+            <ResetPasswordStepTwo />
+          </Route>
+
+          <Route path="/reset-password">
+            <ResetPasswordStepThree />
+          </Route>
+
           <Route path="/home">
             <Home />
           </Route>
 
           <Route exact path="/">
-            <p>home</p>
+            <Root />
           </Route>
         </Switch>
 
