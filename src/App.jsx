@@ -1,22 +1,34 @@
-import { Helmet } from 'react-helmet';
 import './App.css';
-import App2 from './views/App2/App2'
-import App3 from './views/App3/App3'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './views/Login';
+import SignUp from './views/SignUp';
+import Nav from './views/Nav';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <Helmet>
-        <title>My first react app</title>
-        <meta name="hola" content="wasaaa bro" />
-      </Helmet>
-      <div>
-        <h1>App1</h1>
-      </div>
-      <App2 />
-      <App3 />
-    </div>
+    <main>
+      <BrowserRouter>
+        <h1>App</h1>
+        <Nav />
+
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+
+          <Route exact path="/">
+            <p>home</p>
+          </Route>
+        </Switch>
+
+      </BrowserRouter>
+    </main>
   );
-}
+};
 
 export default App;
