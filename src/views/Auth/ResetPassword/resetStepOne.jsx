@@ -27,7 +27,7 @@ const ResetPasswordStepOne = () => {
                 <form method="post" >
                     <label>Ingresa tu correo, número de celular o nombre de usuario</label>
                     <input type="text" required></input>
-                    <input type="button"><Link style={{ textDecoration: 'none' }} to="/send-password-reset">Buscar</Link></input>
+                    <Link style={{ textDecoration: 'none' }} to="/send-reset-password"><button>Buscar</button></Link>
                 </form>
             </div>
         </div>
