@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './views/Login';
 import SignUp from './views/SignUp';
 import Nav from './views/Nav';
-
+import Home from './views/Home/Home';
 
 const App = () => {
   return (
@@ -19,6 +19,10 @@ const App = () => {
 
           <Route path="/signup">
             <SignUp />
+          </Route>
+
+          <Route path="/home">
+            <Home />
           </Route>
 
           <Route exact path="/">
