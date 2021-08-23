@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+import Nav from '../Nav';
 
 const Home = () => {
     return (
@@ -7,13 +8,9 @@ const Home = () => {
                 <title>My first react app</title>
                 <meta name="hola" content="wasaaa bro" />
             </Helmet>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Explorar</li>
-                    <li>Perfil</li>
-                </ul>
-            </nav>
+
+            <Nav />
+
             <section>
                 <h2>Time line</h2>
             </section>
