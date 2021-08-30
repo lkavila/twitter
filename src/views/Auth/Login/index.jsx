@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Metadata from "../../../lib/metadata";
-import LogoTwitter from "../../assets/img/twitter-blue.svg"
+import LogoTwitter from "../../../assets/img/twitter-blue.svg"
 const Login = () => {
     return (
         <div>
