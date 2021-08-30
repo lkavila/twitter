@@ -3,7 +3,7 @@ import Metadata from "../../lib/metadata";
 const Root = () => {
     return (
         <>
-            <Metadata title="hola"/>
+            <Metadata/>
 
             <section>
                 <h1>Lo que esta sucediendo ahora</h1>

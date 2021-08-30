@@ -1,27 +1,11 @@
-import { Helmet } from 'react-helmet';
 import Nav from '../Nav';
 import SmallTweet from '../Tweet/SmallTweet';
+import Metadata from "../../lib/metadata";
 
 const Profile = () => {
     return (
         <div>
-            <Helmet>
-                <title>Perfil</title>
-                <meta name="title" content="Perfil" />
-                <meta name="description" content="Twitter es la mejor red social que existe, mira tu perfil aquí." />
-
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="http://localhost:3000/profile" />
-                <meta property="og:title" content="Perfil" />
-                <meta property="og:description" content="Twitter es la mejor red social que existe, mira tu perfil aquí." />
-                <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
-
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="http://localhost:3000/profile" />
-                <meta property="twitter:title" content="Perfil" />
-                <meta property="twitter:description" content="Twitter es la mejor red social que existe, mira tu perfil aquí." />
-                <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
-            </Helmet>
+            <Metadata title="Perfil Twitter" description="Twitter es la mejor red social que existe, mira tu perfil aquí." route="profile"/>
 
             <Nav />
 

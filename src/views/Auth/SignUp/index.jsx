@@ -1,12 +1,10 @@
-import { Helmet } from 'react-helmet';
+import Metadata from "../../../lib/metadata";
 
 const SignUp = () => {
     return (
         <>
-            <Helmet>
-                <title>Únete a Twitter hoy mismo.</title>
-                <meta name="description" content="Únete hoy a Twitter. Regístrate Iniciar sesión. Sigue lo que te interesa. Entérate de lo que está hablando la gente. Únete a la conversación." />
-            </Helmet>
+            <Metadata title="Únete a Twitter hoy mismo." description="Únete hoy a Twitter. Regístrate Iniciar sesión. Sigue lo que te interesa. Entérate de lo que está hablando la gente. Únete a la conversación." route="register"/>
+
             <section>
                 <h2>Registrate en twitter</h2>
                 <form>
