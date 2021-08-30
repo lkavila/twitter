@@ -1,11 +1,11 @@
-import Nav from '../Nav';
-import SmallTweet from '../Tweet/SmallTweet';
+import Nav from '../../components/Nav';
+import TweetCard from '../../components/TweetCard'
 import Metadata from "../../lib/metadata";
-
+import UserImg from "../../assets/img/default-user-image.png"
 const Profile = () => {
     return (
         <div>
-            <Metadata title="Perfil Twitter" description="Twitter es la mejor red social que existe, mira tu perfil aquí." route="profile"/>
+            <Metadata title="Perfil Twitter" description="Twitter es la mejor red social que existe, mira tu perfil aquí." route="profile" />
 
             <Nav />
 
@@ -16,9 +16,9 @@ const Profile = () => {
                 </section>
                 <section name="datos-usuario">
                     <div>
-                        <img src="" alt="Imagen de portada" />
+                        <img src={UserImg} alt="Imagen de portada" style={{ width: '100px', height: '100px' }} />
                     </div>
-                    <img src="" alt="Imagen de perfil" />
+                    <img src={UserImg} alt="Imagen de perfil" style={{ width: '100px', height: '100px' }} />
                     <h3>Nombre completo</h3>
                     <p>@username</p>
                     <p>Fecha registro</p>
@@ -33,11 +33,11 @@ const Profile = () => {
                     <button>Likes</button>
                     <br></br>
 
-                    <SmallTweet />
+                    <TweetCard />
 
                     <br></br>
 
-                    <SmallTweet />
+                    <TweetCard />
 
                 </section>
 
