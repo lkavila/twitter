@@ -1,13 +1,11 @@
-import Metadata from "../../lib/metadata";
+import UserImg from "../../assets/img/default-user-image.png"
 
 const Tweet = () => {
     return (
-        <>
-            <Metadata title="Mi Tweet" description="(Contenido del tweet)" route="profile:username/id" />
             <article>
                 <div name="tweet">
                     <div name="info-usuario">
-                        <img src="" alt="foto de perfil usuario" />
+                    <img src={UserImg} alt="Imagen de perfil" style={{ width: '100px', height: '100px' }} />
                         <p> <b>Nombre completo</b> @username <span>.</span> fecha tweet</p>
                     </div>
 
@@ -28,7 +26,6 @@ const Tweet = () => {
                     </div>
                 </div>
             </article>
-        </>
     )
 
 }
