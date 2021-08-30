@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
-import Nav from '../../Nav';
-import SmallTweet from '../../Tweet/SmallTweet';
+import Nav from '../Nav';
+import SmallTweet from '../Tweet/SmallTweet';
 
 const Profile = () => {
     return (
