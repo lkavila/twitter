@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
-import Nav from '../../Nav';
-import SmallTweet from '../../Tweet/SmallTweet';
+import Nav from '../../../components/Nav';
+import TweetCard from '../../../components/TweetCard';
 
 const Profile = () => {
     return (
@@ -49,11 +49,11 @@ const Profile = () => {
                     <button>Likes</button>
                     <br></br>
 
-                    <SmallTweet />
+                    <TweetCard />
 
                     <br></br>
 
-                    <SmallTweet />
+                    <TweetCard />
 
                 </section>
 

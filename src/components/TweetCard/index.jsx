@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const SmallTweet = () => {
     return (
-        <>
+        <article>
             <Link style={{ textDecoration: 'none' }} to="/username/tweet">
                 <div name="tweet">
                     <div name="info-usuario">
@@ -21,8 +21,8 @@ const SmallTweet = () => {
                     </div>
                 </div>
             </Link>
-        </>
-    )
+        </article>
+    );
 
 }
 
