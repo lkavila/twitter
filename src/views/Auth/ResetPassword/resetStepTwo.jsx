@@ -1,27 +1,27 @@
 import { Link } from 'react-router-dom';
 import Metadata from "../../../lib/metadata";
-
+import { Form, Input, Button, Avatar } from '../../../components'
 const ResetPasswordStepTwo = () => {
     return (
-        <div>
-            <Metadata/>
-
-            <h2>¿Como quieres cambiar tu contraseña?</h2>
-            <br />
-            <div>
+        <>
+            <Metadata />
+            <section>
+                <h2>¿Como quieres cambiar tu contraseña?</h2>
                 <div>
-                    <img src="" alt="Icono de usuario  "></img>
-                    <b>nombre completo</b>
+                    <Avatar alt="Icono de usuario" />
+                    <strong>nombre completo</strong>
                     <p>@username</p>
                 </div>
-                <form method="post" >
-                    <p>Puedes usar la información asociada a tu cuenta</p>
-                    <input type="radio" required id="send-reset-email" name="send-reset-email" /><label>Enviar un email ******@****.***</label><br></br>
-                    <Link style={{ textDecoration: 'none' }} to="/reset-password"><button>Siguiente</button></Link>
-                </form>
+                <p>Puedes usar la información asociada a tu cuenta</p>
+                <Form>
+                    <Input id="send-reset-email" type="radio" name="send-reset-email" label='Enviar un email ******@****.***' required />
+                    <Link style={{ textDecoration: 'none' }} to="/reset-password">
+                        <Button title='Siguiente' />
+                    </Link>
+                </Form>
                 <Link style={{ textDecoration: 'none' }} to="#">¿No tienes acceso?</Link>
-            </div>
-        </div>
+            </section>
+        </>
 
     );
 }
