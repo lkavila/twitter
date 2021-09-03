@@ -5,25 +5,27 @@ const Root = () => {
     return (
         <>
             <Metadata />
-            <div className='flex flex-row '>
-                <aside className='w-1/2 h-screen bg-blueTwitter flex justify-center items-center'>
+            <div className='h-screen flex flex-col-reverse md:flex-row '>
+                <aside className=' w-full md:w-1/2  h-auto md:h-screen bg-blueTwitter flex justify-center items-center'>
                     <Logo white className="w-96 h-96 fill-current text-green-600" />
                 </aside>
-                <section className='w-1/2 h-screen'>
-                    <Logo />
-                    <h1>Lo que esta sucediendo ahora</h1>
-                    <h2>Únete a Twitter hoy.</h2>
-                    <Button name="signupgoolge" id="signupgoolge" aria-label="Registrate con Google" title="Registrate con Google" />
-                    <Button name="signufacebook" id="signufacebook" aria-label="Registrate con Facebook" title="Registrate con Facebook" />
-                    <Link style={{ textDecoration: 'none' }} to="/signup">
-                        <Button title='Registrate con télefono o con correo eléctronico' />
-                    </Link>
-                    <p>
-                        Al registrarse, usted acepta los  Términos de Servicio  y la Política de  Privacidad, incluido el Uso de  Cookies.
-                    </p>
-                    <br />
-                    <label>¿Ya tienes una cuenta?  </label>
-                    <Link style={{ textDecoration: 'none' }} to="/login">Iniciar sesión</Link>
+                <section className='w-full md:w-1/2 h-5/6 md:h-screen flex justify-center items-center'>
+                    <div className='w-2/3 space-y-6'>
+                        <div className='flex justify-center' >
+                            <Logo />
+                        </div>
+                        <h1 className='text-black font-bold text-3xl'>Welcome to Twitter</h1>
+                        <Link to="/login">
+                            <Button white to='/login' name="signupgoolge" id="signupgoolge" aria-label="Login on twitter" title="Login now" />
+                        </Link>
+                        <p>
+                            Dont have an account?  <span className='text-blueTwitter' to="/login">Join free today</span>
+                        </p>
+                        <Link to="/signup">
+                            <Button white aria-label='sign up on twitter' title='Sing up' />
+                        </Link>
+                    </div>
+
                 </section>
             </div>
         </>
