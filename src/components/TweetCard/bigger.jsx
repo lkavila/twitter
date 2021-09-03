@@ -1,11 +1,10 @@
-import UserImg from "../../assets/img/default-user-image.png"
-
+import {Avatar} from '../'
 const Tweet = () => {
     return (
             <article>
                 <div name="tweet">
                     <div name="info-usuario">
-                    <img src={UserImg} alt="Imagen de perfil" style={{ width: '100px', height: '100px' }} />
+                    <Avatar/>
                         <p> <b>Nombre completo</b> @username <span>.</span> fecha tweet</p>
                     </div>
 

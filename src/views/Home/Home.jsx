@@ -1,7 +1,6 @@
-import Nav from '../../components/Nav';
-import TweetCard from '../../components/TweetCard'
 import { Link } from 'react-router-dom'
 import Metadata from '../../lib/metadata'
+import { Nav, TweetCardSmall, Form, Button, Input } from '../../components'
 const Home = () => {
     return (
         <>
@@ -9,14 +8,14 @@ const Home = () => {
             <Nav />
             <section>
                 <h2>Home</h2>
-                <TweetCard />
+                <TweetCardSmall />
             </section>
             <aside>
                 <section>
-                    <form>
-                        <input type="text" name="search" id="search" aria-label="Busqueda en twitter" placeholder='Search on Twitter' />
-                        <button type="submit">Buscar</button>
-                    </form>
+                    <Form>
+                        <Input id="search" type="text" name="search" title="Busqueda en twitter" />
+                        <Button title='Buscar' />
+                    </Form>
                 </section>
                 <section>
                     <h2>What’s happening</h2>

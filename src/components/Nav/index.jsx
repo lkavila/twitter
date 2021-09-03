@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import LogoTwitter from "../../assets/img/twitter-blue.svg"
-import UserImg from "../../assets/img/default-user-image.png"
+import { Logo, Avatar } from '../'
 const Nav = () => {
     return (
 
         <nav>
-            <img src={LogoTwitter} alt="logo de twitter" style={{ width: '50px', height: '50px' }}></img>
+            <Logo />
             <br />
             <ul>
                 <li><Link style={{ textDecoration: 'none' }} to="/home">Home</Link></li>
@@ -22,7 +21,7 @@ const Nav = () => {
             <button>Tweet</button>
             <br />
             <div>
-                <img src={UserImg} alt="foto-perfil" style={{ width: '100px', height: '100px' }}/>
+                <Avatar />
                 <div>
                     <b>Nombre completo</b>
                     <br />
