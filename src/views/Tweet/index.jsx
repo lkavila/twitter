@@ -1,19 +1,16 @@
-import Nav from '../../components/Nav';
-import Tweet from '../../components/TweetCard/bigger';
-import Metadata from "../../lib/metadata";
+import Metadata from "../../lib/metadata"
+import { Nav, TweetCardBig } from '../../components'
 
 const TweetPage = () => {
-
     return (
         <>
             <Metadata title="Mi Tweet" description="(Contenido del tweet)" route="profile:username/id" />
             <Nav />
             <section>
-                <Tweet />
+                <TweetCardBig />
             </section>
         </>
     )
-
 }
 
 export default TweetPage
