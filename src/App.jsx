@@ -1,50 +1,17 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './views/Auth/Login';
-import SignUp from './views/Auth/SignUp';
-import Home from './views/Home/Home';
-import Root from './views/Auth/index'
-import ResetPasswordStepOne from './views/Auth/ResetPassword/resetStepOne';
-import ResetPasswordStepTwo from './views/Auth/ResetPassword/resetStepTwo';
-import ResetPasswordStepThree from './views/Auth/ResetPassword/resetStepThree';
+import routes from "./lib/routes";
 
 const App = () => {
+    const {restricted, unrestricted} = routes
   return (
     <main>
       <BrowserRouter>
-
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
 
-          <Route path="/signup">
-            <SignUp />
-          </Route>
+            {restricted.map( ({path, component}) => <Route exact path={path} component={component}/>)}
+            {unrestricted.map( ({path, component}) => <Route exact path={path} component={component}/>)}
 
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-
-          <Route path="/search-account">
-            <ResetPasswordStepOne />
-          </Route>
-
-          <Route path="/send-reset-password">
-            <ResetPasswordStepTwo />
-          </Route>
-
-          <Route path="/reset-password">
-            <ResetPasswordStepThree />
-          </Route>
-
-          <Route path="/home">
-            <Home />
-          </Route>
-
-          <Route exact path="/">
-            <Root />
-          </Route>
         </Switch>
 
       </BrowserRouter>
