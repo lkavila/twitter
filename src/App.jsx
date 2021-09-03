@@ -1,4 +1,4 @@
-import './App.css';
+import "tailwindcss/tailwind.css"
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import routes from "./lib/routes";
 
@@ -8,12 +8,9 @@ const App = () => {
     <main>
       <BrowserRouter>
         <Switch>
-
             {restricted.map( ({path, component}) => <Route exact path={path} component={component}/>)}
             {unrestricted.map( ({path, component}) => <Route exact path={path} component={component}/>)}
-
         </Switch>
-
       </BrowserRouter>
     </main>
   );
