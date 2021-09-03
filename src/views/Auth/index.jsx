@@ -10,7 +10,7 @@ const Root = () => {
                     <Logo white className="w-96 h-96 fill-current text-green-600" />
                 </aside>
                 <section className='w-full md:w-1/2 h-5/6 md:h-screen flex justify-center items-center'>
-                    <div className='w-2/3 space-y-6'>
+                    <div className='w-96 space-y-6 px-8 md:px-0'>
                         <div className='flex justify-center' >
                             <Logo />
                         </div>
@@ -25,7 +25,6 @@ const Root = () => {
                             <Button white aria-label='sign up on twitter' title='Sing up' />
                         </Link>
                     </div>
-
                 </section>
             </div>
         </>
