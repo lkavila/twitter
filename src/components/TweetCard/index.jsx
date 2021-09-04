@@ -1,39 +1,43 @@
 import { Link } from 'react-router-dom';
-
 import TweetButton from './TweetButton'
 import { Avatar } from '../'
-const SmallTweet = () => {
+
+const SmallTweet = (props) => {
+    const { id, user = "Luis Avila", username = "username", date = "30/02/2021", content, media, replies = 0, retweets = 0, likes = 0 } = props
     return (
-        <div className="container mx-auto flex flex-row border border-grey-light border-opacity-25 md:py-2 max-w-screen-sm">
-            <div className="lg:px-4">
+        <div name="tweet-container" className="container mx-auto flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-4 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
+            <div name="avatar" className="mr-2">
                 <Avatar />
             </div>
 
 
-            <div>
+            <div name="tweet">
+                <Link to="/profile" name="info-usuario" >
 
-                <div name="tweet">
-                    <div name="info-usuario">
+                    <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{user}</strong> @{username} <span className="mb-4 text-md">.</span> {date}</p>
+                </Link>
+                <div name="contenido-tweet" className="max-w-screen-sm">
+                    <Link to={`/username/tweet/${id}`}>
+                        <article className="text-sm text-grey-contentTwitter mb-2.5">
+                            {content}
+                        </article>
+                    </Link>
 
-                        <p> <b>Nombre completo</b> @username <span>.</span> fecha tweet</p>
-                    </div>
-                    <div name="contenido-tweet" className="max-w-screen-sm">
-                        <Link style={{ textDecoration: 'none' }} to="/username/tweet">
-                            <article>Que pasa chavales!! Todo bien todo correcto? sjkfhjasb fdskjf sjkdh fjsdb gjds gjdshg jksdhkgh sdkhg jkdfh jkghdfkj hgdfjkh gkdjfh kgjhdfjk ghdkjfh</article>
-                        </Link>
-                        {(0 > 5) ? <img alt="media" /> : <div></div>}
-                        <div name="botones" className="container mx-auto flex flex-row justify-between md:py-2.5">
-                            <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={34} style={{ transform: 'rotateY(180deg)' }} />
-                            <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={34} style={{ transform: 'rotate(90deg)' }} />
-                            <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" num={34} />
-                            <TweetButton share hoverColor="#1DA1F2" title="Share" />
-                            <div></div>
-                            {//<TweetButton unlike style={{ color: 'rgb(249, 24, 128)' }} />
-                            }
+                    {(media) ?
+                        <div name="media">
+                            <img alt="media" src={media} className="rounded border-grey border" />
                         </div>
+                        : null}
+                    <div name="botones" className="container mx-auto flex flex-row justify-between md:py-1">
+                        <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={replies} style={{ transform: 'rotateY(180deg)' }} />
+                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={retweets} style={{ transform: 'rotate(90deg)' }} />
+                        <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" num={likes} />
+                        <TweetButton share hoverColor="#1DA1F2" title="Share" />
+                        <div></div>
+                        {//<TweetButton unlike style={{ color: 'rgb(249, 24, 128)' }} />
+                        }
                     </div>
                 </div>
-
             </div>
         </div>
     );
