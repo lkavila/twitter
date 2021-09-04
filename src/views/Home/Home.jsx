@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom'
 import Metadata from '../../lib/metadata'
+import tweetsJson from '../../components/TweetCard/tweets.json'
 import { Nav, TweetCardSmall, Form, Button, Input } from '../../components'
 const Home = () => {
+    const tweets = tweetsJson.tweets
     return (
         <>
             <Metadata title={'Bienvenido a Twitter.'} description="Twitter es la mejor red social que existe, inicia sesión aquí." route='home' ></Metadata>
             <Nav />
-            <section>
-                <h2>Home</h2>
-                <TweetCardSmall />
-            </section>
+            {tweets.map((tweet) =>
+                <section>
+                    <TweetCardSmall {...tweet} />
+                </section>
+            )}
+
             <aside>
                 <section>
                     <Form>

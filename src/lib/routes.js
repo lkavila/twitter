@@ -22,7 +22,7 @@ const routes = {
         },
         {
             title: "Tweet page",
-            path: "/username/tweet",
+            path: "/username/tweet/:id",
             component: TweetPage,
         },
     ],
@@ -42,7 +42,7 @@ const routes = {
             path: "/signup",
             component: SignUp,
         },
-                {
+        {
             title: "Password reset: search user",
             path: "/search-account",
             component: ResetPasswordStepOne,
@@ -52,7 +52,7 @@ const routes = {
             path: "/send-reset-password",
             component: ResetPasswordStepTwo,
         },
-                {
+        {
             title: "Password reset: new password",
             path: "/reset-password",
             component: ResetPasswordStepThree,
