@@ -4,23 +4,30 @@ import { Input, Form, Button, Logo } from '../../../components'
 const SignUp = () => {
     return (
         <>
-            <Metadata title="Únete a Twitter hoy mismo." description="Únete hoy a Twitter. Regístrate Iniciar sesión. Sigue lo que te interesa. Entérate de lo que está hablando la gente. Únete a la conversación." route="register" />
-            <section className='w-3/4 bg-indigo-300'>
-
-
-                <h2>Crea tu cuenta</h2>
-                <Logo />
-                <Form>
-                    <Input id="namedInput" type="text" name="name" title='Nombre' required />
-                    <Input id="emailInput" type="email" name="email" title='Correo o numero de telefono' required />
-                    <h3>Fecha de nacimiento</h3>
-                    <p>Esta información no será pública. Confirma tu propia edad, incluso si esta cuenta es para una empresa, una mascota u otra cosa.</p>
-                    <Input id="birthdayInput" type="date" name="birthday" required />
-                    <Input id="passwordInput" type='password' name="password" title='Contraseña' required />
-                    <Button aria-label="Registrarse en Twitter" title='Registrarse' />
-                </Form>
-                <Link style={{ textDecoration: 'none' }} to="/login">Iniciar Sesión</Link>
-            </section>
+            <Metadata title="Join Twitter today." description="Join Twitter today. Sign up Sign in. Follow what interests you. Find out what people are talking about. Join the conversation." route="register" />
+            <div className='h-full flex justify-center items-center py-16 px-8'>
+                <section className='w-96 space-y-6'>
+                    <Logo />
+                    <p className='text-black-light text-base font-normal'>My Twitter</p>
+                    <h1 className='text-black font-bold text-3xl'>Create your account</h1>
+                    <Form>
+                        <Input id="namedInput" type="text" name="name" title='Name' required />
+                        <Input id="userNamedInput" type="text" name="userName" title='Username' required />
+                        <Input id="emailInput" type="email" name="email" title='Email' required />
+                        <Input id="passwordInput" type='password' name="password" title='Password' required />
+                        <Input id="passwordConfirmatioInput" type='password' name="passwordConfirmation" title='Password Confirmation' required />
+                        <div className='pt-8'>
+                            <Button aria-label='sign up on twitter' title='Sing up' />
+                        </div>
+                    </Form>
+                    <div className='flex justify-center' >
+                        <p className='text-black-light text-base'>
+                            Already have an account?
+                            <Link className='text-blueTwitter' to="/login"> Iniciar Sesión </Link>
+                        </p>
+                    </div>
+                </section>
+            </div>
         </>
     );
 }
