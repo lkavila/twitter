@@ -7,30 +7,34 @@ const Home = () => {
     return (
         <>
             <Metadata title={'Bienvenido a Twitter.'} description="Twitter es la mejor red social que existe, inicia sesión aquí." route='home' ></Metadata>
-            <Nav />
-            {tweets.map((tweet) =>
-                <section>
-                    <TweetCardSmall {...tweet} />
-                </section>
-            )}
-
-            <aside>
-                <section>
-                    <Form>
-                        <Input id="search" type="text" name="search" title="Busqueda en twitter" />
-                        <Button title='Buscar' />
-                    </Form>
-                </section>
-                <section>
-                    <h2>What’s happening</h2>
-                    <Link>Show more</Link>
-                </section>
-                <section>
-                    <h2>Who to follow</h2>
-                    <Link>Show more</Link>
-                </section>
-
-            </aside>
+            <div className='flex justify-center' >
+                <div className='mr-2 sticky top-0'>
+                    <Nav />
+                </div>
+                <article>
+                    {tweets.map((tweet) =>
+                        <section>
+                            <TweetCardSmall {...tweet} />
+                        </section>
+                    )}
+                </article>
+                <aside>
+                    <section>
+                        <Form>
+                            <Input id="search" type="text" name="search" title="Busqueda en twitter" />
+                            <Button title='Buscar' />
+                        </Form>
+                    </section>
+                    <section>
+                        <h2>What’s happening</h2>
+                        <Link>Show more</Link>
+                    </section>
+                    <section>
+                        <h2>Who to follow</h2>
+                        <Link>Show more</Link>
+                    </section>
+                </aside>
+            </div>
         </>
     );
 }
