@@ -11,7 +11,10 @@ module.exports = {
       },
       grey: {
         DEFAULT: '#B0B0B0',
-        light: 'rgba(176, 176, 176, 0.7)'
+        light: 'rgba(176, 176, 176, 0.7)',
+        lighter: 'rgba(176, 176, 176, 0.1)',
+        contentTwitter: '#4F4F4F',
+        textTwitter: '#828282',
       },
       black: {
         DEFAULT: '#1A202C',

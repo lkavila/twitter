@@ -12,7 +12,7 @@ const Profile = () => {
                 </section>
                 <section name="datos-usuario">
                     <div>
-                        <Avatar/>
+                        <Avatar />
                     </div>
                     <Avatar />
                     <h3>Nombre completo</h3>
@@ -30,8 +30,6 @@ const Profile = () => {
                     <br></br>
 
                     <TweetCardSmall />
-
-                    <br></br>
 
                     <TweetCardSmall />
 
