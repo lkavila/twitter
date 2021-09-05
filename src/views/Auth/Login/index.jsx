@@ -5,22 +5,27 @@ const Login = () => {
     return (
         <>
             <Metadata title="Iniciar sesión en Twitter" description="Twitter es la mejor red social que existe, inicia sesión aquí." route="login" />
-            <section>
-                <Logo />
-                <h1>Iniciar sesión en Twitter</h1>
-                <Form>
-                    <Input id="username" type='text' name="username" title="Télefono, correo o usuario" required />
-                    <Input id="password" type='text' name="password" title="Contraseña" required />
-                    <Link style={{ textDecoration: 'none' }} to="/home">
-                        <Button title='"Iniciar sesión"' />
-                    </Link>
-                </Form>
-                <div>
-                    <Link style={{ textDecoration: 'none' }} to="/search-account">¿Olvidaste tu contraseña?</Link>
-                    <span> . </span>
-                    <Link style={{ textDecoration: 'none' }} to="/signup">Registrate en Twitter</Link>
-                </div>
-            </section>
+            <div className='h-full flex justify-center items-center py-16 px-8'>
+                <section className='w-96 space-y-6'>
+                    <Logo />
+                    <p className='text-black-light text-base font-normal'>My Twitter</p>
+                    <h1 className='text-black font-bold text-3xl'>Login to your account</h1>
+                    <Form>
+                        <Input id="emailInput" type="email" name="email" title='Email or Username' required />
+                        <Input id="passwordInput" type='password' name="password" title='Password' required />
+                        <div className='pt-8 space-y-6'>
+                         <Link className='text-blueTwitter' to="/recover-password">Forgot password?</Link>
+                            <Button aria-label='sign up on twitter' title='Login Now' />
+                        </div>
+                    </Form>
+                    <div className='flex justify-center' >
+                        <p className='text-black-light text-base'>
+                            Don't have an account?
+                            <Link className='text-blueTwitter' to="/signup"> Join free today </Link>
+                        </p>
+                    </div>
+                </section>
+            </div>
         </>
 
     );
