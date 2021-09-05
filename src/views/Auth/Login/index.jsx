@@ -4,7 +4,7 @@ import { Form, Input, Button, Logo } from '../../../components'
 const Login = () => {
     return (
         <>
-            <Metadata title="Iniciar sesión en Twitter" description="Twitter es la mejor red social que existe, inicia sesión aquí." route="login" />
+            <Metadata title="Sign in to Twitter." description="Twitter is the best social network out there, log in here." route="login" />
             <div className='h-full flex justify-center items-center py-16 px-8'>
                 <section className='w-96 space-y-6'>
                     <Logo />
