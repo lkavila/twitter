@@ -6,3 +6,7 @@ export { default as Avatar } from './Avatar'
 export { default as Logo } from './Logo'
 export { default as TweetCardSmall } from './TweetCard'
 export { default as TweetCardBig } from './TweetCard/bigger'
+
+export { default as AsideCard } from './AsideCard'
+export { default as TrendingCard } from './TrendingCard'
+export { default as FooterNav } from './FooterNav'
