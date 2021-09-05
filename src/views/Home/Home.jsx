@@ -1,38 +1,53 @@
-import { Link } from 'react-router-dom'
 import Metadata from '../../lib/metadata'
 import tweetsJson from '../../components/TweetCard/tweets.json'
-import { Nav, TweetCardSmall, Form, Button, Input } from '../../components'
+import { Nav, TweetCardSmall, SearchBar, AsideCard, TrendingCard, FooterNav } from '../../components'
 const Home = () => {
     const tweets = tweetsJson.tweets
     return (
         <>
-            <Metadata title={'Bienvenido a Twitter.'} description="Twitter es la mejor red social que existe, inicia sesión aquí." route='home' ></Metadata>
+            <Metadata title={'Welcome to twitter.'} description="Twitter is the best social network out there, log in here." route='home' ></Metadata>
             <div className='flex justify-center' >
                 <div className='mr-2 sticky top-0'>
                     <Nav />
                 </div>
-                <article>
-                    {tweets.map((tweet) =>
-                        <section>
-                            <TweetCardSmall {...tweet} />
-                        </section>
-                    )}
+                <article className='w-104 sticky' >
+                    <section className='sticky top-0 bg-white h-14 px-4 flex items-center border-b border-r border-l border-grey-textTwitter border-opacity-25 text-lg font-black'>
+                        Home
+                    </section>
+                    <div>
+
+                        {tweets.map((tweet) =>
+                            <section>
+                                <TweetCardSmall {...tweet} />
+                            </section>
+                        )}
+                    </div>
                 </article>
-                <aside>
-                    <section>
-                        <Form>
-                            <Input id="search" type="text" name="search" title="Busqueda en twitter" />
-                            <Button title='Buscar' />
-                        </Form>
-                    </section>
-                    <section>
-                        <h2>What’s happening</h2>
-                        <Link>Show more</Link>
-                    </section>
-                    <section>
-                        <h2>Who to follow</h2>
-                        <Link>Show more</Link>
-                    </section>
+                <aside className='w-96 px-8'>
+                    <div className='sticky -top-3/4 space-y-3'>
+                        <section className='sticky top-0'>
+                            <SearchBar />
+                        </section>
+                        <div className='space-y-3 '>
+                            <section>
+                                <AsideCard title='What’s happening'>
+                                    <TrendingCard />
+                                    <TrendingCard />
+                                    <TrendingCard />
+                                    <TrendingCard />
+                                </AsideCard>
+                            </section>
+                            <section>
+                                <AsideCard title='Who to follow'>
+                                    <TrendingCard />
+                                    <TrendingCard />
+                                    <TrendingCard />
+                                    <TrendingCard />
+                                </AsideCard>
+                            </section>
+                            <FooterNav />
+                        </div>
+                    </div>
                 </aside>
             </div>
         </>
