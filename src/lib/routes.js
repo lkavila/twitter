@@ -1,8 +1,6 @@
 import Login from '../views/Auth/Login';
 import SignUp from '../views/Auth/SignUp';
-import ResetPasswordStepOne from "../views/Auth/ResetPassword/resetStepOne";
-import ResetPasswordStepTwo from "../views/Auth/ResetPassword/resetStepTwo";
-import ResetPasswordStepThree from "../views/Auth/ResetPassword/resetStepThree";
+import RecoverPassword from "../views/Auth/ResetPassword";
 import Root from "../views/Auth";
 import Home from "../views/Home/Home";
 import Profile from "../views/Profile";
@@ -44,18 +42,8 @@ const routes = {
         },
         {
             title: "Password reset: search user",
-            path: "/search-account",
-            component: ResetPasswordStepOne,
-        },
-        {
-            title: "Password reset: send reset-link",
-            path: "/send-reset-password",
-            component: ResetPasswordStepTwo,
-        },
-        {
-            title: "Password reset: new password",
-            path: "/reset-password",
-            component: ResetPasswordStepThree,
+            path: "/recover-password",
+            component: RecoverPassword,
         },
     ]
 }
