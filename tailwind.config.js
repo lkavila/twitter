@@ -15,6 +15,7 @@ module.exports = {
         lighter: 'rgba(176, 176, 176, 0.1)',
         contentTwitter: '#4F4F4F',
         textTwitter: '#828282',
+        aside: '#E7ECF0'
       },
       black: {
         DEFAULT: '#1A202C',
