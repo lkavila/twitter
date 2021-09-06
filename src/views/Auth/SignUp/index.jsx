@@ -23,7 +23,7 @@ const SignUp = () => {
                     <div className='flex justify-center' >
                         <p className='text-black-light text-base'>
                             Already have an account?
-                            <Link className='text-blueTwitter' to="/login"> Iniciar Sesión </Link>
+                            <Link className='text-blueTwitter' to="/login"> Login </Link>
                         </p>
                     </div>
                 </section>
