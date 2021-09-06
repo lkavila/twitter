@@ -25,12 +25,12 @@ const SmallTweet = (props) => {
 
                     {(image) ?
                         <div name="media">
-                            <img alt="media" src={image} className="rounded-2xl border-grey border" />
+                            <img alt="media-tweet" src={image} className="rounded-2xl border-grey border" />
                         </div>
                         : null}
                     <div name="botones" className="container mx-auto flex flex-row justify-between md:py-1">
                         <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={replies} />
-                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={retweets}/>
+                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={retweets} />
                         <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" num={likes} />
                         <TweetButton share hoverColor="#1DA1F2" title="Share" />
                         <div></div>

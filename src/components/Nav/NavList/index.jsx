@@ -7,10 +7,10 @@ const NavList = () =>
     <div className='space-y-1 flex flex-col justify-end' >
         <NavItem to='/home' title='Home' Icon={RiHome7Line} IconFill={RiHome7Fill} />
         <NavItem to='/explore' title='Explore' Icon={HiOutlineHashtag} IconFill={HiHashtag} />
-        <NavItem to='#' title='Notifications' Icon={RiNotification2Line} IconFill={RiNotification2Fill} />
-        <NavItem to='#' title='Messages' Icon={HiOutlineMail} IconFill={MdEmail} />
-        <NavItem to='#' title='BookMarks' Icon={RiBookmarkLine} IconFill={RiBookmarkFill} />
-        <NavItem to='#' title='Lists' Icon={RiFileListLine} IconFill={RiFileListFill} />
+        <NavItem to='/notifications' title='Notifications' Icon={RiNotification2Line} IconFill={RiNotification2Fill} />
+        <NavItem to='/messages' title='Messages' Icon={HiOutlineMail} IconFill={MdEmail} />
+        <NavItem to='/bookmarks' title='BookMarks' Icon={RiBookmarkLine} IconFill={RiBookmarkFill} />
+        <NavItem to='/lists' title='Lists' Icon={RiFileListLine} IconFill={RiFileListFill} />
         <NavItem to='/username' title='Profile' Icon={MdPersonOutline} IconFill={MdPerson} />
         <NavItem to='#' title='More' Icon={CgMoreO} IconFill={CgMoreO} />
     </div>
