@@ -9,9 +9,10 @@
             "retweets": 8,
             "replies": 6,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 2,
@@ -22,9 +23,10 @@
             "retweets": 348,
             "replies": 667,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 3,
@@ -35,9 +37,10 @@
             "retweets": 8,
             "replies": 6,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 4,
@@ -48,9 +51,10 @@
             "retweets": 0,
             "replies": 0,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
             "reply": true,
-            "tweetId": 3
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": 3
         },
         {
             "id": 5,
@@ -61,9 +65,10 @@
             "retweets": 38,
             "replies": 56,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 6,
@@ -74,9 +79,10 @@
             "retweets": 22,
             "replies": 14,
             "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "media": null,
+            "image": null,
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 7,
@@ -87,9 +93,10 @@
             "retweets": 9,
             "replies": 3,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 8,
@@ -100,9 +107,10 @@
             "retweets": 0,
             "replies": 0,
             "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "media": null,
+            "image": null,
             "reply": true,
-            "tweetId": 7
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": 7
         },
         {
             "id": 9,
@@ -113,9 +121,10 @@
             "retweets": 5,
             "replies": 19,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
         },
         {
             "id": 10,
@@ -126,9 +135,10 @@
             "retweets": 38,
             "replies": 87,
             "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "media": null,
+            "image": null,
             "reply": true,
-            "tweetId": 2
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": 2
         },
         {
             "id": 11,
@@ -139,9 +149,38 @@
             "retweets": 7,
             "replies": 4,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "media": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
+            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
             "reply": false,
-            "tweetId": -1
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": -1
+        },
+        {
+            "id": 12,
+            "user": "Luis Avila",
+            "username": "lkavila",
+            "date": "30/8/2021",
+            "likes": 3,
+            "retweets": 0,
+            "replies": 0,
+            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
+            "image": null,
+            "reply": true,
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": 7
+        },
+        {
+            "id": 13,
+            "user": "Lionel Messi",
+            "username": "laPulga",
+            "date": "30/8/2021",
+            "likes": 3,
+            "retweets": 0,
+            "replies": 0,
+            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
+            "image": null,
+            "reply": true,
+            "video": "https://twitter.com/i/status/1021698137243746306",
+            "tweetReplyId": 7
         }
     ]
 }
