@@ -22,7 +22,7 @@ const Tweet = () => {
                     <article className="text-2xl mb-4">{tweet.content}</article>
                     {(tweet.image) ?
                         <div name="iamge">
-                            <img alt="media" src={tweet.image} className="rounded-2xl border-grey border cursor-pointer" />
+                            <img alt="media-tweet-bigger" src={tweet.image} className="rounded-2xl border-grey border cursor-pointer" />
                         </div>
                         : null}
 
