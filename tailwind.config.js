@@ -3,8 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      width:{
+      width: {
         '104': '37.375rem'
+      },
+      fontFamily: {
+        roboto: "'Roboto', sans-serif"
       }
     },
     colors: {

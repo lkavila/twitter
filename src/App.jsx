@@ -5,7 +5,7 @@ import routes from "./lib/routes";
 const App = () => {
     const {restricted, unrestricted} = routes
   return (
-    <main>
+    <main className='font-roboto'>
       <BrowserRouter>
         <Switch>
             {restricted.map( ({path, component}) => <Route exact path={path} component={component}/>)}
