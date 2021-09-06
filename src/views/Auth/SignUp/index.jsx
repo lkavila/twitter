@@ -5,8 +5,8 @@ const SignUp = () => {
     return (
         <>
             <Metadata title="Join Twitter today." description="Join Twitter today. Sign up Sign in. Follow what interests you. Find out what people are talking about. Join the conversation." route="register" />
-            <div className='h-full flex justify-center items-center py-16 px-8'>
-                <section className='w-96 space-y-6'>
+            <div className='h-full flex justify-center items-center py-8 px-8'>
+                <section className='w-96 space-y-4'>
                     <Logo />
                     <p className='text-black-light text-base font-normal'>My Twitter</p>
                     <h1 className='text-black font-bold text-3xl'>Create your account</h1>
