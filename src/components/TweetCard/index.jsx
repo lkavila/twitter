@@ -5,8 +5,8 @@ import { Avatar } from '../'
 const SmallTweet = (props) => {
     const { id, user = "Luis Avila", username = "username", date = "30/02/2021", content, image, replies = 0, retweets = 0, likes = 0 } = props
     return (
-        <div name="tweet-container" className="container mx-auto flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-4 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
-            <div name="avatar" className=" w-16 mr-2">
+        <div name="tweet-container" className="container mx-auto flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-2 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
+            <div name="avatar" className="min-w-max w-16 mr-2">
                 <Avatar />
             </div>
 
@@ -29,8 +29,8 @@ const SmallTweet = (props) => {
                         </div>
                         : null}
                     <div name="botones" className="container mx-auto flex flex-row justify-between md:py-1">
-                        <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={replies} style={{ transform: 'rotateY(180deg)' }} />
-                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={retweets} style={{ transform: 'rotate(90deg)' }} />
+                        <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={replies} />
+                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={retweets}/>
                         <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" num={likes} />
                         <TweetButton share hoverColor="#1DA1F2" title="Share" />
                         <div></div>

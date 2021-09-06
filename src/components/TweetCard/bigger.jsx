@@ -36,8 +36,8 @@ const Tweet = () => {
                     </div>
 
                     <div name="botones" className="container mx-auto flex flex-row justify-between md:py-1 border-b border-grey-textTwitter border-opacity-25">
-                        <TweetButton reply hoverColor="#1DA1F2" title="Reply" style={{ transform: 'rotateY(180deg)' }} />
-                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" style={{ transform: 'rotate(90deg)' }} />
+                        <TweetButton reply hoverColor="#1DA1F2" title="Reply" />
+                        <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" />
                         <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" />
                         <TweetButton share hoverColor="#1DA1F2" title="Share" />
                         <div></div>
