@@ -1,15 +1,18 @@
 import { SearchBar, AsideCard, TrendingCard, FooterNav } from '../'
-
+//flex lg:inline-flex hidden
 const TrendingsBar = () => {
     return (
-        <aside className='w-5/12 max-w-sm px-4 flex lg:inline-flex hidden'>
-            <div className='container sticky -top-3/4 space-y-3'>
-                <section className='sticky top-0'>
+        <aside className='w-full px-4 pb-24 container space-y-3 sticky top-0'>
+                <div className='sticky top-0'>
                     <SearchBar />
-                </section>
+                </div>
                 <div className='space-y-3 '>
                     <section>
                         <AsideCard title='What’s happening'>
+                            <TrendingCard />
+                            <TrendingCard />
+                            <TrendingCard />
+                            <TrendingCard />
                             <TrendingCard />
                             <TrendingCard />
                             <TrendingCard />
@@ -26,7 +29,6 @@ const TrendingsBar = () => {
                     </section>
                     <FooterNav />
                 </div>
-            </div>
         </aside>
     );
 }
