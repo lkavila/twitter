@@ -16,7 +16,7 @@ const NavItem = (props) => {
                         )}
 
                 </div>
-                <span className='pl-5 pr-7'>
+                <span className='pl-5 pr-7 flex xl:inline-flex hidden'>
                     {title}
                 </span>
             </button>

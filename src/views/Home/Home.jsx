@@ -1,6 +1,6 @@
 import Metadata from '../../lib/metadata'
 import tweetsJson from '../../components/TweetCard/tweets.json'
-import { Nav, TweetCardSmall, SearchBar, AsideCard, TrendingCard, FooterNav } from '../../components'
+import { Nav, TweetCardSmall, TrendingsBar } from '../../components'
 const Home = () => {
     const tweets = tweetsJson.tweets
     return (
@@ -23,32 +23,7 @@ const Home = () => {
                         )}
                     </div>
                 </article>
-                <aside className='w-96 px-8'>
-                    <div className='sticky -top-3/4 space-y-3'>
-                        <section className='sticky top-0'>
-                            <SearchBar />
-                        </section>
-                        <div className='space-y-3 '>
-                            <section>
-                                <AsideCard title='What’s happening'>
-                                    <TrendingCard />
-                                    <TrendingCard />
-                                    <TrendingCard />
-                                    <TrendingCard />
-                                </AsideCard>
-                            </section>
-                            <section>
-                                <AsideCard title='Who to follow'>
-                                    <TrendingCard />
-                                    <TrendingCard />
-                                    <TrendingCard />
-                                    <TrendingCard />
-                                </AsideCard>
-                            </section>
-                            <FooterNav />
-                        </div>
-                    </div>
-                </aside>
+                <TrendingsBar />
             </div>
         </>
     );

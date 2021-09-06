@@ -1,5 +1,5 @@
 const Button = (props) => {
-    const { title, primary, secondary, to, white, className, ...rest } = props
+    const { title, primary, secondary, to, white, className, width = 'w-full', height = 'h-12', ...rest } = props
     let styles;
 
     if (white) {
@@ -12,7 +12,7 @@ const Button = (props) => {
     return (
 
         <div>
-            <button className={`font-bold w-full h-12 rounded-md ${styles} ${className}`}  {...rest}>
+            <button className={`font-bold ${width} ${height} rounded-md ${styles} ${className}`}  {...rest}>
                 {title}
             </button>
         </div>
