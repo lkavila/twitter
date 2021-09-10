@@ -8,7 +8,8 @@
             "following": 3,
             "followers": 8,
             "numTweets": 2,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/66780587/1622566270/1500x500"
         },
         {
             "id": 2,
@@ -18,7 +19,8 @@
             "following": 35,
             "followers": 8,
             "numTweets": 6,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/231577324/1630675533/1500x500"
         },
         {
             "id": 3,
@@ -28,7 +30,8 @@
             "following": 9,
             "followers": 823491,
             "numTweets": 89,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/2849963640/1628787333/1500x500"
         },
         {
             "id": 4,
@@ -38,7 +41,8 @@
             "following": 35,
             "followers": 1937293,
             "numTweets": 63,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/155659213/1564759975/1500x500"
         },
         {
             "id": 5,
@@ -48,7 +52,8 @@
             "following": 3,
             "followers": 8,
             "numTweets": 2,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500"
         },
         {
             "id": 6,
@@ -58,27 +63,19 @@
             "following": 35,
             "followers": 678,
             "numTweets": 134,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500"
         },
         {
             "id": 7,
-            "name": "Jesus Estrada",
-            "username": "JesusEs",
-            "joinDate": "25/8/2017",
-            "following": 35,
-            "followers": 678,
-            "numTweets": 134,
-            "profileBio": "This is my bio :)"
-        },
-        {
-            "id": 8,
             "name": "Jessica Jones",
             "username": "JessiJo",
             "joinDate": "12/9/2014",
             "following": 141,
             "followers": 67889,
             "numTweets": 3721,
-            "profileBio": "This is my bio :)"
+            "profileBio": "This is my bio :)",
+            "profilePortada": "https://pbs.twimg.com/profile_banners/2180170945/1560496264/1500x500"
         }
     ]
 }

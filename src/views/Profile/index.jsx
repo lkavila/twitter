@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 import Metadata from "../../lib/metadata";
-import { Avatar, TweetCardSmall, TrendingsBar, ActionButton } from '../../components'
+import { Avatar, TweetCardSmall, TrendingsBar, ActionButton, SetupModal } from '../../components'
 import { HiArrowLeft, HiOutlineMail } from 'react-icons/hi'
 import { BsThreeDots } from 'react-icons/bs'
 import { CgCalendarDates } from 'react-icons/cg'
@@ -40,7 +40,7 @@ const Profile = () => {
                                 </div>
                                 <div name="info-details" className="m-4 space-y-4">
                                     <div>
-                                        <p className="text-grey">@{username}</p>
+                                        <h1 className="font-bold text-2xl text-black">@{username}</h1>
                                     </div>
                                 </div>
                             </section>
@@ -74,7 +74,7 @@ const Profile = () => {
                             </section>
                             <section name="datos-usuario">
                                 <div className="cursor-pointer h-29 max-w-full">
-                                    <img alt="portada" src="https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500" />
+                                    <img alt="portada" src={user.profilePortada} />
                                 </div>
 
                                 <div className="flex flex-row justify-between mr-4 ml-4">
@@ -96,26 +96,16 @@ const Profile = () => {
                                             </div>
                                             :
                                             <div className="flex flex-row space-x-2 mt-3 h-9">
-                                                <div className="border border-grey-light cursor-pointer rounded-full hover:bg-grey-lighter p-2">
+                                                <ActionButton outline>
                                                     <BsThreeDots size={20} />
-                                                </div>
-                                                <div className="border border-grey-light cursor-pointer rounded-full hover:bg-grey-lighter p-2">
+                                                </ActionButton>
+                                                <ActionButton outline>
                                                     <HiOutlineMail size={20} />
-                                                </div>
-                                                <div>
-                                                    <button className="bg-black text-white rounded-full w-20 h-9 hover:opacity-75 font-bold">Follow</button>
-                                                </div>
+                                                </ActionButton>
+                                                <ActionButton fill title='Follow' />
                                             </div>
                                     }
-                                    <div className="flex flex-row space-x-2 > * + * mt-3 h-9">
-                                        <ActionButton outline>
-                                            <BsThreeDots size={20} />
-                                        </ActionButton>
-                                        <ActionButton outline>
-                                            <HiOutlineMail size={20} />
-                                        </ActionButton>
-                                        <ActionButton fill title='Follow' />
-                                    </div>
+
                                 </div>
 
                                 <div name="info-details" className="m-4 space-y-4">
