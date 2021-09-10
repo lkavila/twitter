@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Metadata from "../../lib/metadata";
 import { Button, Logo } from '../../components'
 const Root = () => {
@@ -15,15 +14,12 @@ const Root = () => {
                             <Logo />
                         </div>
                         <h1 className='text-black font-bold text-3xl'>Welcome to Twitter</h1>
-                        <Link to="/login">
-                            <Button white to='/login' name="signupgoolge" id="signupgoolge" aria-label="Login on twitter" title="Login now" />
-                        </Link>
+                        <Button white to='/login' name="signupgoolge" id="signupgoolge" aria-label="Login on twitter" title="Login now" />
                         <p>
                             Dont have an account?  <span className='text-blueTwitter' to="/login">Join free today</span>
                         </p>
-                        <Link to="/signup">
-                            <Button white aria-label='sign up on twitter' title='Sing up' />
-                        </Link>
+                        <Button to="/signup" white aria-label='sign up on twitter' title='Sign up' />
+
                     </div>
                 </section>
             </div>

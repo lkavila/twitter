@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 const TrendingCard = () =>
-    <Link to='#'>
+    <Link to='/explore'>
         <div className='p-3 w-full flex flex-col  bg-grey-aside-light hover:bg-grey-aside cursor-pointer'>
             <p className='text-grey-textTwitter text-xs  max-w-full' > #Trending</p>
             <p className='text-grey-textTwitter  text-base font-black' > Jessica Jones</p>
