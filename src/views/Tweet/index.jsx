@@ -1,23 +1,24 @@
 import Metadata from "../../lib/metadata"
-import { Nav, TweetCardBig, TrendingsBar } from '../../components'
+import { TweetCardBig, TrendingsBar } from '../../components'
+import Template from '../../template'
 
 const TweetPage = () => {
     return (
         <>
             <Metadata title="Mi Tweet" description="(Contenido del tweet)" route="profile:username/id" />
-            <div className='flex justify-center' >
-                <div className='mr-2 sticky top-0'>
-                    <Nav />
-                </div>
 
-                <section className='container w-104 border border-grey-lighter' name="tweet-bigger">
-                    <TweetCardBig />
-                </section>
+            <Template
+                content={
 
-                <section >
-                    <TrendingsBar />
-                </section>
-            </div>
+                    <section className='container w-auto border border-grey-lighter' name="tweet-bigger">
+                        <TweetCardBig />
+                    </section>
+                }
+                aside={<TrendingsBar />}
+            >
+
+            </Template>
+
         </>
     )
 }

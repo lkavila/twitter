@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Avatar, TweetCardSmall } from '../'
 import tweetsJson from '../../components/TweetCard/tweets.json'
 import TweetButton from './TweetButton'
@@ -9,14 +9,15 @@ const Tweet = () => {
     return (
         <>
             <div name="tweet-container" className="container mx-auto border-r border-l border-grey-textTwitter border-opacity-25 px-4 py-1 max-w-screen-sm">
-                <div name="image-user" className="flex flex-row mb-6">
-                    <Avatar />
-                    <div name="info-user" className="px-4">
-                        <p> <b>{tweet.user}</b></p>
-                        <p className="text-grey-textTwitter">@{tweet.username}</p>
+                <Link to={`/${tweet.username}`}>
+                    <div name="image-user" className="flex flex-row mb-6">
+                        <Avatar />
+                        <div name="info-user" className="px-4">
+                            <p> <b>{tweet.user}</b></p>
+                            <p className="text-grey-textTwitter">@{tweet.username}</p>
+                        </div>
                     </div>
-
-                </div>
+                </Link>
 
                 <div name="contenido-tweet">
                     <article className="text-2xl mb-4">{tweet.content}</article>

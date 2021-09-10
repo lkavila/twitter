@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-const AsideCard = ({ title, to, children }) =>
+const AsideCard = ({ title, to='/explore', children }) =>
     <div className='bg-grey-aside-light w-full rounded-xl' >
         <div className='h-12 flex justify-center items-center' >
             <h3 className='font-black text-xl' >{title}</h3>

@@ -8,8 +8,8 @@ const App = () => {
     <main className='font-roboto'>
       <BrowserRouter>
         <Switch>
-          {restricted.map(({ path, component }, index) => <Route key={index} exact path={path} component={component} />)}
           {unrestricted.map(({ path, component }, index) => <Route key={index} exact path={path} component={component} />)}
+          {restricted.map(({ path, component }, index) => <Route key={index} exact path={path} component={component} />)}
         </Switch>
       </BrowserRouter>
     </main>

@@ -1,11 +1,60 @@
+import React, { useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom'
 import Metadata from "../../lib/metadata";
-import { Avatar, TweetCardSmall, TrendingsBar} from '../../components'
+import { Avatar, TweetCardSmall, TrendingsBar, ActionButton, SetupModal } from '../../components'
 import { HiArrowLeft, HiOutlineMail } from 'react-icons/hi'
 import { BsThreeDots } from 'react-icons/bs'
 import { CgCalendarDates } from 'react-icons/cg'
 import Template from '../../template'
+import usersJson from './users.json'
+import tweetsJson from '../../components/TweetCard/tweets.json'
 
 const Profile = () => {
+    const history = useHistory()
+    const { username } = useParams();
+    const user = usersJson.users.find(u => u.username === username)
+    const tweets = tweetsJson.tweets
+    const [modal, setModal] = useState(false);
+    if (user === undefined) {
+        return (
+            <>
+                <Metadata title="Perfil Twitter" description="Twitter es la mejor red social que existe, mira tu perfil aquí." route="profile" />
+                <Template
+                    content={
+                        <section className='container max-w-2xl border border-grey-lighter' name="profile">
+                            <section name="top-profile" className="cursor-pointer flex flex-row items-center">
+                                <div className="hover:bg-grey-lighter w-10 h-10 m-2 rounded-full">
+                                    <HiArrowLeft size={17} className="m-3" />
+                                </div>
+                                <div className="px-2">
+                                    <h1 className="font-bold text-xl">Profile</h1>
+                                </div>
+                            </section>
+                            <section name="datos-usuario">
+                                <div className="bg-grey bg-opacity-40 max-w-full h-48">
+                                </div>
+                                <div className="flex flex-row justify-between mr-4 ml-4">
+                                    <div className="-mt-20 flex rounded-full border-4 border-white">
+                                        <Avatar size={32} className="" />
+                                    </div>
+                                </div>
+                                <div name="info-details" className="m-4 space-y-4">
+                                    <div>
+                                        <h1 className="font-bold text-2xl text-black">@{username}</h1>
+                                    </div>
+                                </div>
+                            </section>
+                            <div className="container flex flex-col justify-center text-left mt-16 mx-20 mb-96  w-3/6">
+                                <p className="font-bold text-3xl">This account doesn’t exist</p>
+                                <p className="text-grey">Try searching for another.</p>
+                            </div>
+                        </section>
+                    }
+                    aside={<TrendingsBar />}
+                />
+            </>
+        )
+    }
     return (
         <>
             <Metadata title="Perfil Twitter" description="Twitter es la mejor red social que existe, mira tu perfil aquí." route="profile" />
@@ -13,81 +62,92 @@ const Profile = () => {
                 content={
                     <>
                         <section className='container max-w-2xl border border-grey-lighter' name="profile">
-                            <section name="top-profile" className="cursor-pointer flex flex-row">
-                                <div className="hover:bg-grey-lighter w-10 h-10 m-2 rounded-full">
-                                    <HiArrowLeft size={17} className="m-3" />
-                                </div>
+                            <section name="top-profile" className="h-14 cursor-pointer flex flex-row items-center pl-2">
+                                <ActionButton onClick={() => history.goBack()}>
+                                    <HiArrowLeft size={20} />
+                                </ActionButton>
 
                                 <div className="px-4">
-                                    <h1 className="font-bold text-2xl">Nombre completo</h1>
-                                    <p className="text-grey">(numero tweets)</p>
+                                    <h1 className="font-bold text-xl">{user.name}</h1>
+                                    <p className="text-grey">Tweets {user.numTweets}</p>
                                 </div>
                             </section>
                             <section name="datos-usuario">
-                                <div className="cursor-pointer h-29">
-                                    <img alt="portada" src="https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500" />
+                                <div className="cursor-pointer h-29 max-w-full">
+                                    <img alt="portada" src={user.profilePortada} />
                                 </div>
 
                                 <div className="flex flex-row justify-between mr-4 ml-4">
-                                    <div className="-mt-16 cursor-pointer flex rounded-full border-4 border-white">
-                                        <Avatar size={32} className="" />
+                                    <div className='w-1/4 ' >
+                                        <div className="-mt-16 cursor-pointer flex rounded-full border-4 border-white">
+                                            <Avatar className="w-full h-auto" />
+                                        </div>
                                     </div>
 
-                                    <div className="flex flex-row space-x-2 > * + * mt-3 h-9">
-                                        <div className="border border-grey-light cursor-pointer rounded-full hover:bg-grey-lighter p-2">
-                                            <BsThreeDots size={20} />
-                                        </div>
-                                        <div className="border border-grey-light cursor-pointer rounded-full hover:bg-grey-lighter p-2">
-                                            <HiOutlineMail size={20} />
-                                        </div>
-                                        <div>
-                                            <button className="bg-black text-white rounded-full w-20 h-9 hover:opacity-75 font-bold">Follow</button>
-                                        </div>
-                                    </div>
+                                    <SetupModal open={modal} setOpen={setModal} />
+
+                                    {
+                                        user.username === 'Ema' ?
+                                            <div>
+                                                <button className="mt-3 rounded-full w-36 border-grey-light border h-9 hover:bg-opacity-75 hover:bg-grey-lighter font-bold"
+                                                    onClick={() => setModal(true)}>
+                                                    Set up profile
+                                                </button>
+                                            </div>
+                                            :
+                                            <div className="flex flex-row space-x-2 mt-3 h-9">
+                                                <ActionButton outline>
+                                                    <BsThreeDots size={20} />
+                                                </ActionButton>
+                                                <ActionButton outline>
+                                                    <HiOutlineMail size={20} />
+                                                </ActionButton>
+                                                <ActionButton fill title='Follow' />
+                                            </div>
+                                    }
 
                                 </div>
 
                                 <div name="info-details" className="m-4 space-y-4">
                                     <div>
-                                        <h1 className="font-bold text-2xl text-black">Nombre completo</h1>
-                                        <p className="text-grey">@username</p>
+                                        <h1 className="font-bold text-2xl text-black">{user.name}</h1>
+                                        <p className="text-grey">@{user.username}</p>
                                     </div>
 
-                                    <p name="profile-description">Profile description</p>
+                                    <p name="profile-description">{user.profileBio}</p>
                                     <div className="flex flex-row text-grey">
-                                        <CgCalendarDates size={20} /> <p>Joined August 2021</p>
+                                        <CgCalendarDates size={20} /> <p>Joined {user.joinDate}</p>
                                     </div>
 
                                     <div className="flex flex-row text-grey space-x-2">
-                                        <strong className="text-black">45</strong>
+                                        <strong className="text-black">{user.following}</strong>
                                         <p>Following</p>
-                                        <strong className="text-black">4</strong>
+                                        <strong className="text-black">{user.followers}</strong>
                                         <p>Followers</p>
                                     </div>
                                 </div>
 
                             </section>
 
-                            <section name="tweets" className="flex flex-row justify-around max-w-full h-12 text-grey  ">
+                            <section name="tweets" className="py-2 text-grey  overflow-hidden">
                                 <button className="hover:bg-grey-light w-36 font-bold">Tweets</button>
                                 <button className="hover:bg-grey-light w-40 font-bold">Tweets & replies</button>
                                 <button className="hover:bg-grey-light w-36 font-bold">Media</button>
                                 <button className="hover:bg-grey-light w-36 font-bold">Likes</button>
-
-
                             </section>
-
                             <div>
-
-                                <TweetCardSmall />
-
-                                <TweetCardSmall />
+                                {tweets.filter(t => t.username === user.username).map((tweet) =>
+                                    <section>
+                                        <TweetCardSmall {...tweet} />
+                                    </section>
+                                )}
                             </div>
 
                         </section>
                     </>
                 }
-                aside={<TrendingsBar/>}
+
+                aside={<TrendingsBar />}
             />
         </>
 

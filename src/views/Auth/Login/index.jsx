@@ -15,7 +15,7 @@ const Login = () => {
                         <Input id="passwordInput" type='password' name="password" title='Password' required />
                         <div className='pt-8 space-y-6'>
                             <Link className='text-blueTwitter' to="/recover-password">Forgot password?</Link>
-                            <Button aria-label='sign up on twitter' title='Login Now' />
+                            <Button to='/home' aria-label='sign up on twitter' title='Login Now' />
                         </div>
                     </Form>
                     <div className='flex justify-center' >

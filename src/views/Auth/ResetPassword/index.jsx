@@ -13,7 +13,7 @@ const RecoverPassword = () => {
                     <Form>
                         <Input id="emailInput" type="email" name="email" title='Email or Username' required />
                         <div className='pt-8'>
-                            <Button aria-label='sign up on twitter' title='Recover your password' />
+                            <Button to='/login' aria-label='sign up on twitter' title='Recover your password' />
                         </div>
                     </Form>
                     <div className='flex justify-center' >

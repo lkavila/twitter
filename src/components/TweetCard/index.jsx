@@ -6,13 +6,15 @@ const SmallTweet = (props) => {
     const { id, user = "Luis Avila", username = "username", date = "30/02/2021", content, image, replies = 0, retweets = 0, likes = 0 } = props
     return (
         <div name="tweet-container" className="container mx-auto flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-2 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
-            <div name="avatar" className="min-w-max w-16 mr-2">
-                <Avatar />
-            </div>
+            <Link to={`/${username}`} name="info-usuario-avatar" >
+                <div name="avatar" className="min-w-max w-16 mr-2">
+                    <Avatar />
+                </div>
+            </Link>
 
 
             <div name="tweet">
-                <Link to="/username" name="info-usuario" >
+                <Link to={`/${username}`} name="info-usuario" >
 
                     <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{user}</strong> @{username} <span className="mb-4 text-md">.</span> {date}</p>
                 </Link>
