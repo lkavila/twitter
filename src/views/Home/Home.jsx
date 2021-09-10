@@ -16,8 +16,8 @@ const Home = () => {
                             </section>
                             <div>
 
-                                {tweets.map((tweet) =>
-                                    <section>
+                                {tweets.map((tweet, index) =>
+                                    <section key={index}>
                                         <TweetCardSmall {...tweet} />
                                     </section>
                                 )}

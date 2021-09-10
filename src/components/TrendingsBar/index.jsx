@@ -3,7 +3,7 @@ import { SearchBar, AsideCard, TrendingCard, FooterNav } from '../'
 const TrendingsBar = ({ sticky = 'sticky' }) => {
     return (
         <aside className={`w-full px-4 pb-24 container space-y-3 ${sticky}`}>
-            <div className={`${sticky}`}>
+            <div className={`${sticky} top-0` }>
                 <SearchBar />
             </div>
             <div className='space-y-3 '>

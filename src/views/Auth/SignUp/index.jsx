@@ -17,7 +17,7 @@ const SignUp = () => {
                         <Input id="passwordInput" type='password' name="password" title='Password' required />
                         <Input id="passwordConfirmatioInput" type='password' name="passwordConfirmation" title='Password Confirmation' required />
                         <div className='pt-8'>
-                            <Button aria-label='sign up on twitter' title='Sing up' />
+                            <Button to={'/login'} aria-label='sign up on twitter' title='Sign up' />
                         </div>
                     </Form>
                     <div className='flex justify-center' >
