@@ -1,0 +1,84 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Luis Avila",
+            "username": "lkavila",
+            "joinDate": "5/8/2021",
+            "following": 3,
+            "followers": 8,
+            "numTweets": 2,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 2,
+            "name": "Emanuel Ospino",
+            "username": "Ema",
+            "joinDate": "25/8/2020",
+            "following": 35,
+            "followers": 8,
+            "numTweets": 6,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 3,
+            "name": "Lionel Messi",
+            "username": "LaPulga",
+            "joinDate": "5/8/2014",
+            "following": 9,
+            "followers": 823491,
+            "numTweets": 89,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 4,
+            "name": "Cristiano Ronaldo",
+            "username": "cr7",
+            "joinDate": "3/2/2010",
+            "following": 35,
+            "followers": 1937293,
+            "numTweets": 63,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 5,
+            "name": "Nubia Palacio",
+            "username": "NubIsela",
+            "joinDate": "5/3/2022",
+            "following": 3,
+            "followers": 8,
+            "numTweets": 2,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 6,
+            "name": "Jesus Estrada",
+            "username": "JesusEs",
+            "joinDate": "25/8/2017",
+            "following": 35,
+            "followers": 678,
+            "numTweets": 134,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 7,
+            "name": "Jesus Estrada",
+            "username": "JesusEs",
+            "joinDate": "25/8/2017",
+            "following": 35,
+            "followers": 678,
+            "numTweets": 134,
+            "profileBio": "This is my bio :)"
+        },
+        {
+            "id": 8,
+            "name": "Jessica Jones",
+            "username": "JessiJo",
+            "joinDate": "12/9/2014",
+            "following": 141,
+            "followers": 67889,
+            "numTweets": 3721,
+            "profileBio": "This is my bio :)"
+        }
+    ]
+}
