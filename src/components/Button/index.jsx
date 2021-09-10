@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 const Button = (props) => {
-    const { title, primary, secondary, to, white, className, width = 'w-full', height = 'h-12', ...rest } = props
+    const { title, children, primary, secondary, to, white, className, width = 'w-full', height = 'h-12', ...rest } = props
     let styles;
 
     if (white) {
@@ -11,11 +12,11 @@ const Button = (props) => {
     }
     return (
 
-        <div>
-            <button className={`font-bold ${width} ${height} rounded-md ${styles} ${className}`}  {...rest}>
-                {title}
-            </button>
-        </div>
+        <Link to={to} className={` text-center flex justify-center items-center font-bold ${width} ${height} rounded-md ${styles} ${className} `}  {...rest}>
+            {children}
+            {title}
+        </Link>
+
     )
 }
 export default Button;
