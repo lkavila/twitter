@@ -11,7 +11,7 @@ const NavList = () =>
         <NavItem to='/messages' title='Messages' Icon={HiOutlineMail} IconFill={MdEmail} />
         <NavItem to='/bookmarks' title='BookMarks' Icon={RiBookmarkLine} IconFill={RiBookmarkFill} />
         <NavItem to='/lists' title='Lists' Icon={RiFileListLine} IconFill={RiFileListFill} />
-        <NavItem to='/username' title='Profile' Icon={MdPersonOutline} IconFill={MdPerson} />
+        <NavItem to='/Ema' title='Profile' Icon={MdPersonOutline} IconFill={MdPerson} />
         <NavItem to='#' title='More' Icon={CgMoreO} IconFill={CgMoreO} />
     </div>
 export default NavList;
