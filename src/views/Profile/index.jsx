@@ -120,10 +120,17 @@ const Profile = () => {
                                     </div>
 
                                     <div className="flex flex-row text-grey space-x-2">
-                                        <strong className="text-black">{user.following}</strong>
-                                        <p>Following</p>
-                                        <strong className="text-black">{user.followers}</strong>
-                                        <p>Followers</p>
+
+                                        <div className=" flex flex-row cursor-pointer space-x-2 hover:underline">
+                                            <strong className="text-black">{user.following}</strong>
+                                            <p>Following</p>
+                                        </div>
+                                        <div className="flex flex-row cursor-pointer space-x-2 hover:underline">
+                                            <strong className="text-black">{user.followers}</strong>
+                                            <p>Followers</p>
+                                        </div>
+
+
                                     </div>
                                 </div>
 
