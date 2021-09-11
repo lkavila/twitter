@@ -1,5 +1,25 @@
 # Getting Started with Create React App
 
+## Host
+You can see the proyect running in the next link thanks to firebase hosting.
+[Demo Twitter](https://mytwitter-5fc2c.web.app/).
+
+### ENV file required
+#### Variables below are for google analytics
+```
+REACT_APP_API_KEY=
+REACT_APP_AUTH_DOMAIN=
+REACT_APP_PROJECT_ID=
+REACT_APP_STORAGE_BUCKET=
+REACT_APP_MESSAGING_SENDER_ID=
+REACT_APP_APP_ID=
+REACT_APP_MEASUREMENT_ID=
+```
+
+### Firebase setup
+Create a new firebase proyect and enable hosting and google analytics 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

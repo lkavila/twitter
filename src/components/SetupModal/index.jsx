@@ -50,8 +50,8 @@ const SetUpModal = ({ open, setOpen }) => {
                                                     Have a favorite selfie? Upload it now.
                                                 </p>
                                             </div>
-                                            <div className="w-full flex justify-center p-10 mb-28">
-                                                <Avatar size={44} />
+                                            <div className="w-full flex justify-center p-4 mb-20">
+                                                <Avatar className="w-2/4 h-2/4" />
                                             </div>
                                         </div>
                                     </div>
