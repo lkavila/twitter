@@ -1,7 +1,9 @@
 import React from 'react';
 import { render } from 'react-snapshot';
+import { getAnalytics } from "firebase/analytics";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebaseApp from './services/firebase'
 
 render(
   <React.StrictMode>
@@ -14,3 +16,4 @@ render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+getAnalytics(firebaseApp);
