@@ -2,19 +2,20 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-'on':
+"on":
   push:
     branches:
       - main
 jobs:
   build_and_deploy:
+    environment: .env
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ' yarn install --frozen-lockfile && yarn build'
+      - run: " yarn install --frozen-lockfile && yarn build"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYTWITTER_5FC2C }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYTWITTER_5FC2C }}"
           channelId: live
           projectId: mytwitter-5fc2c
