@@ -7,8 +7,8 @@ name: Deploy to Firebase Hosting on merge
     branches:
       - main
 jobs:
-  environment: .env
   build_and_deploy:
+    environment: .env
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
