@@ -1,186 +1,76 @@
 {
     "tweets": [
         {
-            "id": 1,
-            "user": "Luis Avila",
-            "username": "lkavila",
-            "date": "5/8/2021",
+            "_id": 1,
+            "user": {
+                "name": "Luis Avila",
+                "username": "lkavila"
+            },
+            "createdAt": "2021-10-18T01:29:53.030Z",
             "likes": 35,
-            "retweets": 8,
-            "replies": 6,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
             "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
+            "comments": []
         },
         {
-            "id": 2,
-            "user": "Cristiano Ronaldo",
-            "username": "cr7",
-            "date": "9/8/2021",
+            "_id": 2,
+            "user": {
+                "name": "Cristiano Ronaldo",
+                "username": "cr7"
+            },
+            "createdAt": "2021-10-18T01:25:57.735Z",
             "likes": 359863,
-            "retweets": 348,
-            "replies": 667,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
             "image": "https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
+            "comments": []
         },
         {
-            "id": 3,
-            "user": "Emanuel Ospino",
-            "username": "Ema",
-            "date": "22/8/2021",
+            "_id": 3,
+            "user": {
+                "name": "Emanuel Ospino",
+                "username": "Ema"
+            },
+            "createdAt": "2021-10-18T01:25:57.735Z",
             "likes": 35,
-            "retweets": 8,
-            "replies": 6,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
             "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
+            "comments": []
         },
         {
-            "id": 4,
-            "user": "Luis Avila",
-            "username": "lkavila",
-            "date": "523/8/2021",
-            "likes": 5,
-            "retweets": 0,
-            "replies": 0,
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
-            "reply": true,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": 3
-        },
-        {
-            "id": 5,
-            "user": "Jesus Estrada",
-            "username": "JesusEs",
-            "date": "5/8/2021",
-            "likes": 505,
-            "retweets": 38,
-            "replies": 56,
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
-        },
-        {
-            "id": 6,
-            "user": "Luis Avila",
-            "username": "lkavila",
-            "date": "26/8/2021",
-            "likes": 95,
-            "retweets": 22,
-            "replies": 14,
-            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "image": null,
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
-        },
-        {
-            "id": 7,
-            "user": "Nubia Palacio",
-            "username": "NubIsela",
+            "_id": 4,
+            "user": {
+                "name": "Nubia Palacio",
+                "username": "NubIsela"
+            },
             "date": "29/8/2021",
             "likes": 75,
-            "retweets": 9,
-            "replies": 3,
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
             "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
+            "comments": []
         },
         {
-            "id": 8,
-            "user": "Luis Avila",
-            "username": "lkavila",
-            "date": "30/8/2021",
-            "likes": 3,
-            "retweets": 0,
-            "replies": 0,
-            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "image": null,
-            "reply": true,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": 7
+            "likes": 0,
+            "_id": "616cce1195c56052347ba366",
+            "content": "Este es mi Segundo tweet",
+            "user": {
+                "_id": "616c21797dcab8368032d86d",
+                "name": "kener avila 2",
+                "username": "lkavila2"
+            },
+            "comments": [],
+            "createdAt": "2021-10-18T01:29:53.030Z"
         },
         {
-            "id": 9,
-            "user": "Luis Avila",
-            "username": "lkavila",
-            "date": "31/8/2021",
-            "likes": 43,
-            "retweets": 5,
-            "replies": 19,
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "image": "https://pbs.twimg.com/profile_banners/2541159535/1587044172/1500x500",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
-        },
-        {
-            "id": 10,
-            "user": "Lionel Messi",
-            "username": "LaPulga",
-            "date": "9/8/2021",
-            "likes": 35963,
-            "retweets": 38,
-            "replies": 87,
-            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "image": null,
-            "reply": true,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": 2
-        },
-        {
-            "id": 11,
-            "user": "Emanuel Ospino",
-            "username": "Ema",
-            "date": "1/9/2021",
-            "likes": 42,
-            "retweets": 7,
-            "replies": 4,
-            "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.",
-            "image": "https://media.kasperskydaily.com/wp-content/uploads/sites/87/2020/02/19115044/twitter-privacy-security-featured.jpg",
-            "reply": false,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": -1
-        },
-        {
-            "id": 12,
-            "user": "Luis Avila",
-            "username": "lkavila",
-            "date": "30/8/2021",
-            "likes": 3,
-            "retweets": 0,
-            "replies": 0,
-            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "image": null,
-            "reply": true,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": 7
-        },
-        {
-            "id": 13,
-            "user": "Lionel Messi",
-            "username": "LaPulga",
-            "date": "30/8/2021",
-            "likes": 3,
-            "retweets": 0,
-            "replies": 0,
-            "content": "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.",
-            "image": null,
-            "reply": true,
-            "video": "https://twitter.com/i/status/1021698137243746306",
-            "tweetReplyId": 7
+            "likes": 0,
+            "_id": "616ccd2595c56052347ba365",
+            "content": "Este es mi primer tweet",
+            "user": {
+                "_id": "616c21797dcab8368032d86d",
+                "name": "kener avila 2",
+                "username": "lkavila2"
+            },
+            "comments": [],
+            "createdAt": "2021-10-18T01:25:57.735Z"
         }
     ]
 }
