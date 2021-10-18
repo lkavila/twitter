@@ -5,16 +5,16 @@ import TweetButton from './TweetButton'
 
 const Tweet = () => {
     const { id } = useParams();
-    const tweet = tweetsJson.tweets.find(t => t.id === parseInt(id, 10))
+    const tweet = tweetsJson.tweets.find(t => String(t._id) === id)
     return (
         <>
             <div name="tweet-container" className="container mx-auto border-r border-l border-grey-textTwitter border-opacity-25 px-4 py-1 max-w-screen-sm">
-                <Link to={`/${tweet.username}`}>
+                <Link to={`/${tweet.user.username}`}>
                     <div name="image-user" className="flex flex-row mb-6">
                         <Avatar />
                         <div name="info-user" className="px-4">
-                            <p> <b>{tweet.user}</b></p>
-                            <p className="text-grey-textTwitter">@{tweet.username}</p>
+                            <p> <b>{tweet.user.name}</b></p>
+                            <p className="text-grey-textTwitter">@{tweet.user.username}</p>
                         </div>
                     </div>
                 </Link>
@@ -29,11 +29,11 @@ const Tweet = () => {
 
 
                     <div name="info-tweet" className="py-2 border-b border-grey-textTwitter border-opacity-25">
-                        <p className="text-grey-textTwitter"> 11:30 am <span>.</span> {tweet.date} <span>.</span> Twitter from </p>
+                        <p className="text-grey-textTwitter"> 11:30 am <span>.</span> {tweet.createdAt} <span>.</span> Twitter from </p>
                     </div>
 
                     <div name="numbers-tweet" className="py-2 border-b border-grey-textTwitter border-opacity-25">
-                        <p className="text-grey-textTwitter"> <b className="text-black">{tweet.retweets}</b> Retweets <span> </span>  <b className="text-black">{tweet.replies}</b> Quote tweets <span> </span> <b className="text-black">{tweet.likes}</b> Likes </p>
+                        <p className="text-grey-textTwitter"> <b className="text-black">{17}</b> Retweets <span> </span>  <b className="text-black">{12}</b> Quote tweets <span> </span> <b className="text-black">{tweet.likes}</b> Likes </p>
                     </div>
 
                     <div name="botones" className="container mx-auto flex flex-row justify-between md:py-1 border-b border-grey-textTwitter border-opacity-25">
@@ -42,8 +42,6 @@ const Tweet = () => {
                         <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" />
                         <TweetButton share hoverColor="#1DA1F2" title="Share" />
                         <div></div>
-                        {//<TweetButton unlike style={{ color: 'rgb(249, 24, 128)' }} />
-                        }
                     </div>
                 </div>
 

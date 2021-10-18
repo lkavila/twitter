@@ -9,6 +9,7 @@ import { useHistory } from "react-router";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [isIncorrect, setIsIncorrect] = useState("")
 
     const auth = useContext(AuthContext);
     const history = useHistory();
@@ -21,6 +22,8 @@ const Login = () => {
                     const user = data.data;
                     auth.login(user);
                     history.push("/home");
+                } else {
+                    setIsIncorrect(data.message)
                 }
             })
             .catch((err) => {
@@ -36,6 +39,12 @@ const Login = () => {
                     <Logo />
                     <p className='text-black-light text-base font-normal'>My Twitter</p>
                     <h1 className='text-black font-bold text-3xl'>Login to your account</h1>
+                    {
+                        isIncorrect !== ""
+                            ? <div className='bg-opacity-30  w-full text-redTwitter'>{isIncorrect}, check username and password </div>
+                            : <></>
+                    }
+
                     <Form>
                         <Input id="emailInput" type="email" name="email" title='Email or Username' required onChange={event => setUsername(event.target.value)} value={username} />
                         <Input id="passwordInput" type='password' name="password" title='Password' required onChange={event => setPassword(event.target.value)} value={password} />
