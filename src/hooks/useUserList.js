@@ -11,7 +11,7 @@ export const useUsersList = () => {
             const response = await getUsersList();
             setUsers(response.data);
             setLoadingU(false);
-        }, 2000);
+        }, 500);
     }
     useEffect(() => {
         listUsers();

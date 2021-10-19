@@ -1,12 +1,15 @@
 import { get, post } from "./http";
 
-const createTweet = async (content, token) => {
-    const json = await post("tweets", content, token);
+const createTweet = async (text) => {
+    const content = {
+        content: text
+    }
+    const json = await post("tweets", content);
     return json;
 }
 
-const getTweets = async (token) => {
-    const json = await get("tweets", token);
+const getTweets = async () => {
+    const json = await get("tweets");
     return json;
 }
 

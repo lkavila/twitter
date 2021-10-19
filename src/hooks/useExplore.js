@@ -6,16 +6,14 @@ export const useExplore = () => {
     const [loading, setLoading] = useState(false)
     const [username, setUsername] = useState('Huawei')
 
-    const listTrendings = () => {
+
+    useEffect(() => {
         setLoading(true);
         setTimeout(async () => {
             const response = await getTrending(username);
             setExplore(response);
             setLoading(false);
-        }, 2000);
-    }
-    useEffect(() => {
-        listTrendings()
+        }, 500);
     }, [username]);
 
 
