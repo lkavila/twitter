@@ -32,7 +32,7 @@ const Explore = () => {
                                     (
                                         explore?.map((tweet, index) =>
                                             <section key={index}>
-                                                <TweetCardSmall text={tweet.text} date={tweet.created_at} user={username} username={username} />
+                                                <TweetCardSmall content={tweet.text} createdAt={tweet.created_at} user={{user:username,username:username}} />
                                             </section>
                                         )
                                     )

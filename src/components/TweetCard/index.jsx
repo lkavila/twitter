@@ -3,7 +3,8 @@ import TweetButton from './TweetButton'
 import { Avatar } from '../'
 
 const SmallTweet = (props) => {
-    const { id, user = "Luis Avila", username = "username", date = "30/02/2021", content, image, replies = 0, retweets = 0, likes = 0, text } = props
+    const { _id, user, createdAt = "30/02/2021", content, image = null, replies = 0, retweets = 0, likes = 0 } = props
+    const { name, username } = user;
     return (
         <div name="tweet-container" className="container mx-auto flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-2 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
             <Link to={`/${username}`} name="info-usuario-avatar" >
@@ -11,18 +12,15 @@ const SmallTweet = (props) => {
                     <Avatar />
                 </div>
             </Link>
-
-
             <div name="tweet">
                 <Link to={`/${username}`} name="info-usuario" >
 
-                    <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{user}</strong> @{username} <span className="mb-4 text-md">.</span> {date}</p>
+                    <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{name}</strong> @{username} <span className="mb-4 text-md">.</span> {createdAt}</p>
                 </Link>
                 <div name="contenido-tweet" className="max-w-screen-sm">
-                    <Link to={`/username/tweet/${id}`}>
+                    <Link to={`/username/tweet/${_id}`}>
                         <article className="text-sm text-grey-contentTwitter mb-2.5">
                             {content}
-                            {text}
                         </article>
                     </Link>
 

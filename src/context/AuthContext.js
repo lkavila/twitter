@@ -25,7 +25,11 @@ const AuthProvider = (props) => {
         return user ? !!Object.keys(user).length : false;
     };
 
-    return (<AuthContext.Provider value={{ login, logout, isLoggedIn, user }}>
+    const token = () => {
+        return user?.token
+    };
+
+    return (<AuthContext.Provider value={{ login, logout, isLoggedIn, user, token }}>
         {props.children}
     </AuthContext.Provider>);
 };
