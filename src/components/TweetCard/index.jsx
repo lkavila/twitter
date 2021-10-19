@@ -12,8 +12,6 @@ const SmallTweet = (props) => {
                     <Avatar />
                 </div>
             </Link>
-
-
             <div name="tweet">
                 <Link to={`/${username}`} name="info-usuario" >
 
