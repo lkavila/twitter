@@ -1,9 +1,17 @@
+import { useEffect } from 'react'
 import Metadata from '../../lib/metadata'
-import tweetsJson from '../../components/TweetCard/tweets.json'
-import { TweetCardSmall, TrendingsBar } from '../../components'
+import { TweetCardSmall, TrendingsBar, Spinner } from '../../components'
 import Template from '../../template'
+import { useHistory } from "react-router-dom";
+import { useExplore } from '../../hooks/useExplore'
 const Explore = () => {
-    const tweets = tweetsJson.tweets
+    const { setUsername, username, loading, explore } = useExplore()
+    const history = useHistory();
+    useEffect(() => {
+        if (history.location.search) {
+            setUsername(history.location.search.split('=')[1])
+        }
+    })
     return (
         <>
             <Metadata title={'Welcome to twitter.'} description="Twitter is the best social network out there, log in here." route='home' ></Metadata>
@@ -15,11 +23,20 @@ const Explore = () => {
                                 Explore
                             </section>
                             <div>
-                                {tweets.map((tweet, index) =>
-                                    <section key={index}>
-                                        <TweetCardSmall {...tweet} />
-                                    </section>
-                                )}
+                                {loading ?
+                                    (
+                                        <div className='w-full h-40 flex justify-center items-center' >
+                                            <Spinner size={8} />
+                                        </div>
+                                    ) :
+                                    (
+                                        explore?.map((tweet, index) =>
+                                            <section key={index}>
+                                                <TweetCardSmall text={tweet.text} date={tweet.created_at} user={username} username={username} />
+                                            </section>
+                                        )
+                                    )
+                                }
                             </div>
                         </article>
                     </>
