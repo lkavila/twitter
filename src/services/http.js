@@ -5,7 +5,7 @@ const get = async (endpoint) => {
         const response = await fetch(`${httpAPI}/${endpoint}`, {
             headers: {
                 'Content-Type': 'application/json',
-                'x-access-token': JSON.parse(localStorage.getItem("user")).token
+                'x-access-token': JSON.parse(localStorage.getItem("user"))?.token
             }
         });
         return response.json();
@@ -21,7 +21,7 @@ const post = async (endpoint, data) => {
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
-                'x-access-token': localStorage.getItem("user").token
+                'x-access-token': JSON.parse(localStorage.getItem("user"))?.token
             }
         });
         return response.json();
