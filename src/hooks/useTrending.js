@@ -22,7 +22,7 @@ export const useTrending = () => {
             }
             setTrendings([...aux]);
             setLoading(false);
-        }, 2000);
+        }, 500);
     }
     useEffect(() => {
         if (username !== '') {
