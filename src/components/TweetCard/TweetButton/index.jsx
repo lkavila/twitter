@@ -6,7 +6,7 @@ import { FiShare } from "react-icons/fi";
 
 
 const TweetButton = (props) => {
-    const { reply, like, unlike, retweet, share, num, color = 'gray', hoverColor, style, size = 18, title } = props
+    const { reply, like, unlike, retweet, share, num, color = 'gray', hoverColor, style, size = 18, title, onClick } = props
     let Icon, bgHoverColor, textHoverColor
 
     const [iconColor, setIconColor] = useState(color);
@@ -35,7 +35,7 @@ const TweetButton = (props) => {
 
     return (
         <div >
-            <button name={title} id={title} className={`container flex flex-row hover:text-${textHoverColor}`} onMouseOver={() => setIconColor(hoverColor)} onMouseLeave={() => setIconColor(color)}>
+            <button name={title} id={title} className={`container flex flex-row hover:text-${textHoverColor}`} onMouseOver={() => setIconColor(hoverColor)} onMouseLeave={() => setIconColor(color)} onClick={onClick} >
                 <div className={`transition duration-500 hover:bg-${bgHoverColor} rounded-full p-2.5`}>
                     <Icon size={size} color={iconColor} title={title} style={style} />
                 </div>

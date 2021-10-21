@@ -9,31 +9,31 @@ const Tweet = () => {
     return (
         <>
             <div name="tweet-container" className="container mx-auto border-r border-l border-grey-textTwitter border-opacity-25 px-4 py-1 max-w-screen-sm">
-                <Link to={`/${tweet.user.username}`}>
+                <Link to={`/`}>
                     <div name="image-user" className="flex flex-row mb-6">
                         <Avatar />
                         <div name="info-user" className="px-4">
-                            <p> <b>{tweet.user.name}</b></p>
-                            <p className="text-grey-textTwitter">@{tweet.user.username}</p>
+                            <p> <b>username</b></p>
+                            <p className="text-grey-textTwitter">@</p>
                         </div>
                     </div>
                 </Link>
 
                 <div name="contenido-tweet">
-                    <article className="text-2xl mb-4">{tweet.content}</article>
-                    {(tweet.image) ?
+                    <article className="text-2xl mb-4"></article>
+                    {(false) ?
                         <div name="iamge">
-                            <img alt="media-tweet-bigger" src={tweet.image} className="rounded-2xl border-grey border cursor-pointer" />
+                            <img alt="media-tweet-bigger" src={''} className="rounded-2xl border-grey border cursor-pointer" />
                         </div>
                         : null}
 
 
                     <div name="info-tweet" className="py-2 border-b border-grey-textTwitter border-opacity-25">
-                        <p className="text-grey-textTwitter"> 11:30 am <span>.</span> {tweet.createdAt} <span>.</span> Twitter from </p>
+                        <p className="text-grey-textTwitter"> 11:30 am <span>.</span> createdAt <span>.</span> Twitter from </p>
                     </div>
 
                     <div name="numbers-tweet" className="py-2 border-b border-grey-textTwitter border-opacity-25">
-                        <p className="text-grey-textTwitter"> <b className="text-black">{17}</b> Retweets <span> </span>  <b className="text-black">{12}</b> Quote tweets <span> </span> <b className="text-black">{tweet.likes}</b> Likes </p>
+                        <p className="text-grey-textTwitter"> <b className="text-black">{17}</b> Retweets <span> </span>  <b className="text-black">{12}</b> Quote tweets <span> </span> <b className="text-black">1</b> Likes </p>
                     </div>
 
                     <div name="botones" className="container mx-auto flex flex-row justify-between md:py-1 border-b border-grey-textTwitter border-opacity-25">
