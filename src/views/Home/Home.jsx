@@ -5,7 +5,7 @@ import Template from '../../template'
 import { useTweets } from '../../hooks/useTweets'
 
 const Home = () => {
-    const { tweets, loadingT, addTweet} = useTweets()
+    const { tweets, loadingT, addTweet } = useTweets()
     return (
         <>
             <Metadata title={'Welcome to twitter.'} description="Twitter is the best social network out there, log in here." route='home' ></Metadata>
@@ -17,7 +17,7 @@ const Home = () => {
                                 Home
                             </section>
                             <section>
-                                <TweetInput addTweet={addTweet}/>
+                                <TweetInput addTweet={addTweet} />
                             </section>
                             <div>
                                 {loadingT ? (
