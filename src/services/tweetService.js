@@ -13,4 +13,5 @@ const getTweets = async () => {
     return json;
 }
 
+
 export { createTweet, getTweets }

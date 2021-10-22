@@ -1,12 +1,19 @@
-import { useHistory } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
 import Metadata from "../../lib/metadata"
-import { TweetCardBig, TrendingsBar, ActionButton } from '../../components'
+import { TweetCardBig, TrendingsBar, ActionButton, TweetCardSmall } from '../../components'
+import { useOneTweet } from '../../hooks/useOneTweet'
 import { HiArrowLeft } from 'react-icons/hi'
 import Template from '../../template'
 
 const TweetPage = () => {
-
     const history = useHistory()
+    const { id } = useParams();
+    const { loadingT, tweet, set_id, addComment, comments, likes, addLike } = useOneTweet();
+    useEffect(() => {
+        set_id(id)
+    })
+    console.log(tweet)
     return (
         <>
             <Metadata title="Mi Tweet" description="(Contenido del tweet)" route="profile:username/id" />
@@ -21,8 +28,17 @@ const TweetPage = () => {
                             <h1 className="font-bold text-xl">Tweet</h1>
                         </section>
                         <section className='container w-auto border border-grey-lighter' name="tweet-bigger">
-                            <TweetCardBig />
+                            <TweetCardBig loadingT={loadingT} tweet={tweet} createComment={addComment} addLike={addLike} replies={comments.length} likes={likes} />
                         </section>
+                        <div>
+                            {
+                                comments?.map((item, index) =>
+                                    <section key={index}>
+                                        <TweetCardSmall createComment={addComment} {...item} autor={tweet?.user?.username} />
+                                    </section>
+                                )
+                            }
+                        </div>
                     </>
                 }
                 aside={<TrendingsBar />}

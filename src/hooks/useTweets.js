@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getTweets, createTweet } from '../services/tweetService'
 import { createComment } from '../services/commentsService'
+import { createLike } from '../services/likesService'
 
 export const useTweets = () => {
     const [tweets, setTweets] = useState([])
@@ -22,14 +23,19 @@ export const useTweets = () => {
     const addTweet = (content) => {
         createTweet(content)
             .then(data => {
-                const user = JSON.parse(localStorage.getItem('user'))
-                console.log(user)
-                const tweetUser = {
-                    ...data,
-                    user: { name: user.name, username: user.username }
+                if (data.user) {
+                    const user = JSON.parse(localStorage.getItem('user'))
+                    console.log(user)
+                    const tweetUser = {
+                        ...data,
+                        user: { name: user.name, username: user.username }
+                    }
+                    let aux = [tweetUser, ...tweets]
+                    setTweets(aux)
+                } else {
+                    console.log(data)
                 }
-                let aux = [tweetUser, ...tweets]
-                setTweets(aux)
+
             })
             .catch((err) => {
                 console.log("err", err);
@@ -40,6 +46,7 @@ export const useTweets = () => {
         loadingT,
         tweets,
         addTweet,
-        createComment
+        createComment,
+        createLike
     }
 }

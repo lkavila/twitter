@@ -5,12 +5,12 @@ import { Avatar } from '../'
 import { GiEarthAmerica } from "react-icons/gi";
 import ButtonsRow from "./buttonsRow"
 
-const TweetInput = ({ addTweet={}, placeholder = "What's hapenning?", createComment={}, _id }) => {
+const TweetInput = ({ addTweet = {}, placeholder = "What's hapenning?", createComment = {}, _id, setOpen = {}, setTweetReplies = {}, tweetReplies }) => {
     const { user } = useContext(AuthContext);
     const [content, setContent] = useState("");
     const textArea = useRef(null);
     const handleChange = (event) => {
-        textArea.current.style.height = "5px";
+        textArea.current.style.height = "1px";
         textArea.current.style.height = (textArea.current.scrollHeight) + "px";
         setContent(event.target.value)
     }
@@ -29,19 +29,24 @@ const TweetInput = ({ addTweet={}, placeholder = "What's hapenning?", createComm
                     onChange={handleChange}
                     value={content}
                     placeholder={placeholder}
-                    maxLength="280"
+                    maxLength="1000"
                 >
-                    {content}
+                    {
+                        content.substring(0, 280)
+                    }
 
                 </textarea>
-                <div className="container flex flex-row hover:bg-blueTwitter-lighter max-w-max cursor-pointer -ml-4 px-3 py-1 rounded-full">
-                    <GiEarthAmerica size="18" color="blue" className="mr-2" />
+                <p className="bg-redTwitter-light text-xl whitespace-pre-wrap break-all max-w-none">
+                    {content.slice(280)}
+                </p>
+                <div className="flex flex-row hover:bg-blueTwitter-lighter max-w-max cursor-pointer -ml-4 px-3 py-1 rounded-full">
+                    <GiEarthAmerica size="18" color="dodgerblue" className="mr-2" />
                     <p className="text-blueTwitter font-bold text-sm">Everyone can see</p>
                 </div>
 
                 <div className="border-t border-grey-aside" />
 
-                <ButtonsRow content={content} setContent={setContent} addTweet={addTweet} createComment={createComment} _id={_id} />
+                <ButtonsRow content={content} setContent={setContent} setOpen={setOpen} addTweet={addTweet} createComment={createComment} _id={_id} setTweetReplies={setTweetReplies} tweetReplies={tweetReplies} />
             </div>
 
         </div>
