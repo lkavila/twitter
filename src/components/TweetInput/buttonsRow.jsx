@@ -16,13 +16,19 @@ const Icon = (Icon, display = 'block') => {
     );
 }
 
-const ButtonsRow = ({ content, addTweet, setContent }) => {
+const ButtonsRow = ({ content, addTweet = {}, setContent, createComment = {}, _id, setOpen = {}, setTweetReplies = {}, tweetReplies = {} }) => {
     const [disable, setDisable] = useState(false)
     const handleClik = () => {
-        if (!disable) {
+        console.log(content)
+        if (_id) {
+            createComment(content, _id)
+            if (typeof (setTweetReplies) === 'function')
+                setTweetReplies(tweetReplies + 1)
+        } else {
             addTweet(content)
-            setContent("")
         }
+        setContent("")
+        setOpen(false)
     }
     useEffect(() => {
         if (content.length > 280) {

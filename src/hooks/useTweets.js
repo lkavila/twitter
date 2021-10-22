@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import { getTweets, createTweet, getTweet } from '../services/tweetService'
+import { getTweets, createTweet } from '../services/tweetService'
+import { createComment } from '../services/commentsService'
+import { createLike } from '../services/likesService'
 
 export const useTweets = () => {
     const [tweets, setTweets] = useState([])
@@ -16,13 +18,6 @@ export const useTweets = () => {
     useEffect(() => {
         listTweets();
     }, []);
-
-    const getOneTweet = async (id) => {
-        setLoadingT(true);
-        const response = await getTweet(id);
-        setLoadingT(false);
-        return response;
-    }
 
 
     const addTweet = (content) => {
@@ -51,6 +46,7 @@ export const useTweets = () => {
         loadingT,
         tweets,
         addTweet,
-        getOneTweet
+        createComment,
+        createLike
     }
 }
