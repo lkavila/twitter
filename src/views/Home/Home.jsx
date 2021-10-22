@@ -1,21 +1,11 @@
 import Metadata from '../../lib/metadata'
-import { TweetCardSmall, TrendingsBar, TweetInput } from '../../components'
+import { TweetCardSmall, TrendingsBar, TweetInput, Spinner } from '../../components'
 import Template from '../../template'
-import { useEffect, useState } from 'react'
-import { getTweets } from '../../services/tweetService'
+
+import { useTweets } from '../../hooks/useTweets'
 
 const Home = () => {
-    const [tweets, setTweets] = useState([])
-
-    useEffect(() => {
-        getTweets()
-            .then(data => {
-                setTweets(data.data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
+    const { tweets, loadingT, addTweet, createComment } = useTweets()
     return (
         <>
             <Metadata title={'Welcome to twitter.'} description="Twitter is the best social network out there, log in here." route='home' ></Metadata>
@@ -27,14 +17,17 @@ const Home = () => {
                                 Home
                             </section>
                             <section>
-                                <TweetInput />
+                                <TweetInput addTweet={addTweet} />
                             </section>
                             <div>
-
-                                {tweets?.map((tweet, index) =>
-                                    <section key={index}>
-                                        <TweetCardSmall {...tweet} />
-                                    </section>
+                                {loadingT ? (
+                                    <Spinner size={8} />
+                                ) : (
+                                    tweets?.map((tweet, index) =>
+                                        <section key={index}>
+                                            <TweetCardSmall createComment={createComment} {...tweet} />
+                                        </section>
+                                    )
                                 )}
                             </div>
                         </article>

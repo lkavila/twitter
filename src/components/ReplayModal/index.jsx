@@ -1,6 +1,6 @@
 import { Avatar, Modal, TweetInput } from '../'
 const ReplayModal = (props) => {
-    const { user, createdAt, content, image = null, open, setOpen } = props
+    const { user, createdAt, content, image = null, open, setOpen, createComment, _id } = props
     const { name, username } = user;
     return (
         <>
@@ -32,7 +32,7 @@ const ReplayModal = (props) => {
                         <p>Replying to <span className='text-blueTwitter'>@{username}</span></p>
                     </div>
                 </div>
-                <TweetInput placeholder='Tweet your reply' />
+                <TweetInput placeholder='Tweet your reply' createComment={createComment} _id={_id} />
             </Modal>
         </>
     )

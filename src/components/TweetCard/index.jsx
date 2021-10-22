@@ -4,7 +4,7 @@ import TweetButton from './TweetButton'
 import { Avatar, ReplayModal } from '../'
 
 const SmallTweet = (props) => {
-    const { _id, user, createdAt = "30/02/2021", content, image = null, replies = 0, retweets = 0, likes = 0 } = props
+    const { _id, user, createdAt = "30/02/2021", content, image = null, replies = 0, retweets = 0, likes = 0, createComment } = props
     const { name, username } = user;
     const [open, setOpen] = useState(false)
     return (
@@ -44,7 +44,7 @@ const SmallTweet = (props) => {
                     </div>
                 </div>
             </div>
-            <ReplayModal {...props} open={open} setOpen={setOpen} />
+            <ReplayModal {...props} open={open} setOpen={setOpen} createComment={createComment} />
         </>
     );
 

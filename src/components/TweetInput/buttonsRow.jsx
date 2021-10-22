@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { AuthContext } from "../../context/AuthContext";
 import { Button } from '../'
 import { AiOutlinePicture } from "react-icons/ai";
 import { HiOutlineEmojiHappy } from "react-icons/hi";
@@ -7,7 +5,6 @@ import { AiOutlineGif } from "react-icons/ai";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { AiOutlineBarChart } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
-import { createTweet } from "../../services/tweetService"
 
 const Icon = (Icon, display = 'block') => {
     return (
@@ -17,18 +14,15 @@ const Icon = (Icon, display = 'block') => {
     );
 }
 
-const ButtonsRow = (content) => {
-    const { user } = useContext(AuthContext);
+const ButtonsRow = ({ content, addTweet = {}, setContent, createComment = {}, _id }) => {
     const handleClik = () => {
         console.log(content)
-        createTweet(content, user.token)
-            .then(data => {
-                console.log(data)
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
-        content.setContent("")
+        if (_id) {
+            createComment(content, _id)
+        } else {
+            addTweet(content)
+        }
+        setContent("")
     }
     return (
         <div className="container flex felx-col justify-between  items-center">

@@ -17,11 +17,7 @@ const SignUp = () => {
         event.preventDefault();
         signUpUser(name, email, username, password, password)
             .then(data => {
-                if (data.message === "ok") {
-                    const user = data.data;
-                    console.log(user)
-                    history.push("/login");
-                }
+                history.push("/login");
             })
             .catch((err) => {
                 console.log("err", err);

@@ -34,13 +34,8 @@ const TrendingsBar = ({ sticky = 'sticky' }) => {
                                     <Spinner size={8} />
                                 ) :
                                 (
-                                    usersList?.map((item, index) => {
-                                        if (item.name !== 'Administrator') {
-                                            return (
-                                                <TrendingCard key={index} username={item.username} name={item.name} />
-                                            )
-                                        }
-                                    }
+                                    usersList?.filter(u => u.name !== 'Administrator').map((item, index) =>
+                                        <TrendingCard key={index} username={item.username} name={item.name} />
                                     )
                                 )
                         }

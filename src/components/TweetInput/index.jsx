@@ -5,7 +5,7 @@ import { Avatar } from '../'
 import { GiEarthAmerica } from "react-icons/gi";
 import ButtonsRow from "./buttonsRow"
 
-const TweetInput = ({ placeholder = "What's hapenning?" }) => {
+const TweetInput = ({ addTweet={}, placeholder = "What's hapenning?", createComment={}, _id }) => {
     const { user } = useContext(AuthContext);
     const [content, setContent] = useState("");
     const textArea = useRef(null);
@@ -41,7 +41,7 @@ const TweetInput = ({ placeholder = "What's hapenning?" }) => {
 
                 <div className="border-t border-grey-aside" />
 
-                <ButtonsRow content={content} setContent={setContent} />
+                <ButtonsRow content={content} setContent={setContent} addTweet={addTweet} createComment={createComment} _id={_id} />
             </div>
 
         </div>
