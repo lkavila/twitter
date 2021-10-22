@@ -29,5 +29,20 @@ const post = async (endpoint, data) => {
         return console.log(err);
     }
 };
+const put = async (endpoint, data) => {
+    try {
+        const response = await fetch(`${httpAPI}/${endpoint}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': JSON.parse(localStorage.getItem("user"))?.token
+            }
+        });
+        return response.json();
+    } catch (err) {
+        return console.log(err);
+    }
+};
 
-export { get, post };
+export { get, post, put };
