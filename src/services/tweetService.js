@@ -13,4 +13,9 @@ const getTweets = async () => {
     return json;
 }
 
-export { createTweet, getTweets }
+const getTweet = async (id) => {
+    const json = await get(`tweets/get-one/${id}`);
+    return json;
+}
+
+export { createTweet, getTweets, getTweet }

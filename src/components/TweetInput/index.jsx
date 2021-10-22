@@ -10,7 +10,7 @@ const TweetInput = ({ addTweet }) => {
     const [content, setContent] = useState("");
     const textArea = useRef(null);
     const handleChange = (event) => {
-        textArea.current.style.height = "5px";
+        textArea.current.style.height = "1px";
         textArea.current.style.height = (textArea.current.scrollHeight) + "px";
         setContent(event.target.value)
     }
@@ -29,13 +29,18 @@ const TweetInput = ({ addTweet }) => {
                     onChange={handleChange}
                     value={content}
                     placeholder="What's hapenning?"
-                    maxLength="280"
+                    maxLength="1000"
                 >
-                    {content}
+                    {
+                        content.substring(0, 280)
+                    }
 
                 </textarea>
-                <div className="container flex flex-row hover:bg-blueTwitter-lighter w-1/3 cursor-pointer -ml-4 px-3 py-1 rounded-full">
-                    <GiEarthAmerica size="18" color="blue" className="mr-2" />
+                <p className="bg-redTwitter-light text-xl whitespace-pre-wrap break-all max-w-none">
+                    {content.slice(280)}
+                </p>
+                <div className="flex flex-row hover:bg-blueTwitter-lighter w-1/3 cursor-pointer -ml-4 px-3 py-1 rounded-full">
+                    <GiEarthAmerica size="18" color="dodgerblue" className="mr-2" />
                     <p className="text-blueTwitter font-bold text-sm">Everyone can see</p>
                 </div>
 
