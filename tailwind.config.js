@@ -44,6 +44,7 @@ module.exports = {
       redTwitter: {
         DEFAULT: 'rgb(249, 24, 128)',
         light: 'rgba(249, 24, 128, 0.2)',
+        realRed: 'rgba(255,0,0,1)'
       },
       white: '#fff',
       transparent: 'transparent',
