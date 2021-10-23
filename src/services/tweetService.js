@@ -13,10 +13,6 @@ const getTweets = async () => {
     return json;
 }
 
-const getTweet = async (id) => {
-    const json = await get(`tweets/get-one/${id}`);
-    return json;
-}
 
 const deleteTweet = async (tweetId) => {
     const data = {
@@ -27,4 +23,4 @@ const deleteTweet = async (tweetId) => {
 
 }
 
-export { createTweet, getTweets, getTweet, deleteTweet }
+export { createTweet, getTweets, deleteTweet }
