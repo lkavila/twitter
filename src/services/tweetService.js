@@ -1,4 +1,4 @@
-import { get, post } from "./http";
+import { get, post, deleteR } from "./http";
 
 const createTweet = async (text) => {
     const content = {
@@ -18,4 +18,13 @@ const getTweet = async (id) => {
     return json;
 }
 
-export { createTweet, getTweets, getTweet }
+const deleteTweet = async (tweetId) => {
+    const data = {
+        tweetId: tweetId
+    }
+    const json = await deleteR("tweets", data);
+    return json;
+
+}
+
+export { createTweet, getTweets, getTweet, deleteTweet }

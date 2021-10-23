@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getTweets, createTweet, getTweet } from '../services/tweetService'
+import { getTweets, createTweet, getTweet, deleteTweet } from '../services/tweetService'
 
 export const useTweets = () => {
     const [tweets, setTweets] = useState([])
@@ -47,10 +47,26 @@ export const useTweets = () => {
             });
     }
 
+    const deleteMyTweet = (tweetId) => {
+        deleteTweet(tweetId)
+            .then(data => {
+                if (data.id || data.message) {
+                    setTweets(tweets.filter(tweet => tweet._id !== tweetId))
+                } else {
+                    console.log(data)
+                }
+
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }
+
     return {
         loadingT,
         tweets,
         addTweet,
-        getOneTweet
+        getOneTweet,
+        deleteMyTweet
     }
 }

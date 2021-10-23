@@ -30,4 +30,20 @@ const post = async (endpoint, data) => {
     }
 };
 
-export { get, post };
+const deleteR = async (endpoint, data) => {
+    try {
+        const response = await fetch(`${httpAPI}/${endpoint}`, {
+            method: "DELETE",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': JSON.parse(localStorage.getItem("user"))?.token
+            }
+        });
+        return response.json();
+    } catch (err) {
+        return console.log(err);
+    }
+};
+
+export { get, post, deleteR };
