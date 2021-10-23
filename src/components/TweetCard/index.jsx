@@ -1,10 +1,38 @@
+import { useContext } from 'react';
+import { AuthContext } from "../../context/AuthContext";
 import { Link } from 'react-router-dom';
-import TweetButton from './TweetButton'
-import { Avatar } from '../'
+import TweetButton from './TweetButton';
+import { Avatar, DropDownMenu } from '../';
+import { BsPersonPlus, BsCardList, BsCodeSlash, BsFlag, BsTrash } from 'react-icons/bs'
+import { IoVolumeMuteOutline } from 'react-icons/io5'
+import { MdBlock } from 'react-icons/md'
+import { FiBarChart2 } from 'react-icons/fi'
+import { VscPinned } from 'react-icons/vsc'
+import { useTweets } from '../../hooks/useTweets';
+
+
 
 const SmallTweet = (props) => {
     const { _id, user, createdAt = "30/02/2021", content, image = null, replies = 0, retweets = 0, likes = 0 } = props
     const { name, username } = user;
+    const myUserName = useContext(AuthContext).user.username;
+    const { deleteMyTweet } = useTweets();
+    let opctions;
+    if (myUserName === username) {
+        opctions =
+            [{ Icon: BsTrash, text: "Delete", iconColor: "red", textColor: "text-redTwitter-realRed", func: deleteMyTweet, params: [_id] },
+            { Icon: VscPinned, text: "Pin to your profile" },
+            { Icon: BsCardList, text: `Add/remove @${username} from Lists` },
+            { Icon: BsCodeSlash, text: `Embed Tweet` },
+            { Icon: FiBarChart2, text: "View Tweet activity" }]
+    } else {
+        opctions = [{ Icon: BsPersonPlus, text: `Follow @${username}` },
+        { Icon: BsCardList, text: `Add/remove @${username} from Lists` },
+        { Icon: IoVolumeMuteOutline, text: `Mute @${username}` },
+        { Icon: MdBlock, text: `Block @${username}` },
+        { Icon: BsCodeSlash, text: `Embed Tweet` },
+        { Icon: BsFlag, text: `Report Tweet` }]
+    }
     let breakContent = "";
     if (content.length === content.replaceAll(" ", "12").length) {//En caso de que el contenido sea letras sin espacios, se rompen (style break-all)
         breakContent = "break-all";
@@ -17,10 +45,18 @@ const SmallTweet = (props) => {
                 </div>
             </Link>
             <div name="tweet" className="container max-w-screen-sm">
-                <Link to={`/${username}`} name="info-usuario" >
 
-                    <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{name}</strong> @{username} <span className="mb-4 text-md">.</span> {createdAt}</p>
-                </Link>
+                <div className="flex flex-row justify-between">
+                    <Link to={`/${username}`} name="info-usuario" >
+                        <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{name}</strong> @{username} <span className="mb-4 text-md">.</span> {createdAt}</p>
+                    </Link>
+
+                    <div className="hover:bg-blueTwitter-lighter p-2 w-8 h-8 rounded-full -mb-1" >
+                        <DropDownMenu
+                            elements={opctions}
+                        />
+                    </div>
+                </div>
 
                 <div name="contenido-tweet" className="max-w-screen-sm">
                     <Link to={`/username/tweet/${_id}`}>
