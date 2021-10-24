@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 const TrendingCard = ({ username, text, name }) =>
-    <Link to='/explore'>
+    <Link to={!name ? `/explore?=${username}` : `/${username}`}>
         <div className='p-3 w-full flex flex-col  bg-grey-aside-light hover:bg-grey-aside cursor-pointer'>
             {!name && (
                 <p className='text-grey-textTwitter text-xs  max-w-full' > #Trending</p>
