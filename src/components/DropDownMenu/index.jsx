@@ -6,7 +6,7 @@ const classNames = (...classes) => {
     return classes.filter(Boolean).join(' ')
 }
 
-const MenuItem = (Icon, text, func, params, textColor, iconColor) => {
+const MenuItem = (Icon, text, func, params, textColor, iconColor, index) => {
 
     const handleClick = () => {
         if (func !== undefined) {
@@ -20,7 +20,7 @@ const MenuItem = (Icon, text, func, params, textColor, iconColor) => {
     }
 
     return (
-        <Menu.Item>
+        <Menu.Item key={index}>
             {({ active }) => (
                 <div className="flex flex-row space-x-3 hover:bg-grey-lighter" onClick={handleClick}>
                     {Icon ? <Icon size={18} color={iconColor} className="mt-2 ml-2" /> : null}
@@ -59,8 +59,8 @@ const DropDownMenu = ({ elements }) => {
             >
                 <Menu.Items className="z-10 origin-top-right absolute right-0 -mt-6 -ml-2 w-80 max-w-xs rounded-md shadow-xl bg-white">
                     <div className="py-1">
-                        {elements?.map(element => {
-                            return MenuItem(element.Icon, element.text, element.func, element.params, element.textColor, element.iconColor)
+                        {elements?.map((element, index) => {
+                            return MenuItem(element.Icon, element.text, element.func, element.params, element.textColor, element.iconColor, index)
                         })}
                     </div>
                 </Menu.Items>

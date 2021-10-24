@@ -13,7 +13,6 @@ const TweetPage = () => {
     useEffect(() => {
         set_id(id)
     })
-    console.log(tweet)
     return (
         <>
             <Metadata title="Mi Tweet" description="(Contenido del tweet)" route="profile:username/id" />

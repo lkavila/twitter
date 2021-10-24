@@ -8,15 +8,13 @@ import { IoVolumeMuteOutline } from 'react-icons/io5'
 import { MdBlock } from 'react-icons/md'
 import { FiBarChart2 } from 'react-icons/fi'
 import { VscPinned } from 'react-icons/vsc'
-import { useTweets } from '../../hooks/useTweets';
 
 const SmallTweet = (props) => {
-    const { _id, user, createdAt, content, comment, image = null, replies = 0, retweets = 0, likes = 0, createComment = {}, createLike = {}, autor } = props
+    const { _id, user, createdAt, content, comment, image = null, replies = 0, retweets = 0, likes = 0, createComment = {}, createLike = {}, deleteMyTweet, autor } = props
     const { name, username } = user;
     const myUser = useContext(AuthContext).user;
     const myUsername = myUser.username
     const userId = myUser._id
-    const { deleteMyTweet } = useTweets();
     let opctions;
     if (myUsername === username) {
         opctions =
@@ -34,8 +32,6 @@ const SmallTweet = (props) => {
         { Icon: BsFlag, text: `Report Tweet` }]
     }
     const [open, setOpen] = useState(false)
-    const [tweetLike, setTweetLike] = useState(likes)
-    const [tweetReplies, setTweetReplies] = useState(replies)
 
     let breakContent = "";
     if (content?.length === content?.replaceAll(" ", "12")?.length) {
@@ -45,11 +41,11 @@ const SmallTweet = (props) => {
     const handleLike = () => {
         if (typeof (createLike) === 'function')
             createLike(1, _id)
-                .then(() => setTweetLike(tweetLike + 1))
     }
     return (
         <div name="tweet-container" className="container flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-2 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
-            <Link to={`/${username}`} name="info-usuario-avatar" >
+            <Link
+                to={`/${username}`} >
                 <div name="avatar" className="min-w-max w-16 mr-2">
                     <Avatar />
                 </div>
@@ -91,15 +87,15 @@ const SmallTweet = (props) => {
 
                     <div className="container">
                         <div name="botones" className="flex flex-row justify-between mr-20 md:py-1">
-                            <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={tweetReplies} onClick={() => setOpen(!open)} />
+                            <TweetButton reply hoverColor="#1DA1F2" title="Reply" num={replies} onClick={() => setOpen(!open)} />
                             <TweetButton retweet hoverColor="rgb(0, 186, 124)" title="Retweet" num={retweets} />
-                            <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" num={tweetLike} onClick={handleLike} />
+                            <TweetButton like hoverColor="rgb(249, 24, 128)" title="Like" num={likes} onClick={handleLike} />
                             <TweetButton share hoverColor="#1DA1F2" title="Share" />
                         </div>
                     </div>
                 </div>
             </div>
-            <ReplayModal {...props} open={open} setOpen={setOpen} createComment={createComment} setTweetReplies={setTweetReplies} tweetReplies={tweetReplies} />
+            <ReplayModal {...props} open={open} setOpen={setOpen} createComment={createComment} />
         </div>
     );
 
