@@ -1,4 +1,5 @@
-const httpAPI = process.env.REACT_APP_HTTP_API;
+const httpAPI = process.env.NODE_ENV === "production" ? process.env.REACT_APP_HTTP_API_PRO : process.env.REACT_APP_HTTP_API_DEV;
+
 
 const get = async (endpoint) => {
     try {
