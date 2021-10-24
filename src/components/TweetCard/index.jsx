@@ -1,12 +1,38 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react';
+import { AuthContext } from "../../context/AuthContext";
 import { Link } from 'react-router-dom';
-import TweetButton from './TweetButton'
-import { Avatar, ReplayModal } from '../'
+import TweetButton from './TweetButton';
+import { Avatar, DropDownMenu, ReplayModal } from '../';
+import { BsPersonPlus, BsCardList, BsCodeSlash, BsFlag, BsTrash } from 'react-icons/bs'
+import { IoVolumeMuteOutline } from 'react-icons/io5'
+import { MdBlock } from 'react-icons/md'
+import { FiBarChart2 } from 'react-icons/fi'
+import { VscPinned } from 'react-icons/vsc'
+import { useTweets } from '../../hooks/useTweets';
 
 const SmallTweet = (props) => {
-    console.log(props)
     const { _id, user, createdAt, content, comment, image = null, replies = 0, retweets = 0, likes = 0, createComment = {}, createLike = {}, autor } = props
     const { name, username } = user;
+    const myUser = useContext(AuthContext).user;
+    const myUsername = myUser.username
+    const userId = myUser._id
+    const { deleteMyTweet } = useTweets();
+    let opctions;
+    if (myUsername === username) {
+        opctions =
+            [{ Icon: BsTrash, text: "Delete", iconColor: "red", textColor: "text-redTwitter-realRed", func: deleteMyTweet, params: [_id, userId] },
+            { Icon: VscPinned, text: "Pin to your profile" },
+            { Icon: BsCardList, text: `Add/remove @${username} from Lists` },
+            { Icon: BsCodeSlash, text: `Embed Tweet` },
+            { Icon: FiBarChart2, text: "View Tweet activity" }]
+    } else {
+        opctions = [{ Icon: BsPersonPlus, text: `Follow @${username}` },
+        { Icon: BsCardList, text: `Add/remove @${username} from Lists` },
+        { Icon: IoVolumeMuteOutline, text: `Mute @${username}` },
+        { Icon: MdBlock, text: `Block @${username}` },
+        { Icon: BsCodeSlash, text: `Embed Tweet` },
+        { Icon: BsFlag, text: `Report Tweet` }]
+    }
     const [open, setOpen] = useState(false)
     const [tweetLike, setTweetLike] = useState(likes)
     const [tweetReplies, setTweetReplies] = useState(replies)
@@ -16,26 +42,30 @@ const SmallTweet = (props) => {
         //En caso de que el contenido sea letras sin espacios, se rompen (style break-all)
         breakContent = "break-all";
     }
-
     const handleLike = () => {
         if (typeof (createLike) === 'function')
             createLike(1, _id)
                 .then(() => setTweetLike(tweetLike + 1))
     }
-
     return (
-        <>
-            <div name="tweet-container" className="container flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-2 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
-                <Link to={`/${username}`} name="info-usuario-avatar" >
-                    <div name="avatar" className="min-w-max w-16 mr-2">
-                        <Avatar />
-                    </div>
-                </Link>
-                <div name="tweet" className="container max-w-screen-sm">
-                    <Link to={`/${username}`} name="info-usuario" >
+        <div name="tweet-container" className="container flex flex-row border-t border-r border-l border-grey-textTwitter border-opacity-25 px-2 py-2 max-w-screen-sm hover:bg-grey-lighter cursor-pointer">
+            <Link to={`/${username}`} name="info-usuario-avatar" >
+                <div name="avatar" className="min-w-max w-16 mr-2">
+                    <Avatar />
+                </div>
+            </Link>
+            <div name="tweet" className="container max-w-screen-sm">
 
+                <div className="flex flex-row justify-between">
+                    <Link to={`/${username}`} name="info-usuario" >
                         <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{name}</strong> @{username} <span className="mb-4 text-md">.</span> {createdAt}</p>
                     </Link>
+
+                    <div className="hover:bg-blueTwitter-lighter p-2 w-8 h-8 rounded-full -mb-1" >
+                        <DropDownMenu elements={opctions} />
+                    </div>
+                </div>
+                <div name="content-tweet">
                     <Link to={`/username/tweet/${_id}`}>
                         <div name="contenido-tweet" className="max-w-screen-sm">
                             <article className={`text-sm text-grey-contentTwitter mb-2.5 whitespace-pre-wrap ${breakContent}`} >
@@ -70,7 +100,7 @@ const SmallTweet = (props) => {
                 </div>
             </div>
             <ReplayModal {...props} open={open} setOpen={setOpen} createComment={createComment} setTweetReplies={setTweetReplies} tweetReplies={tweetReplies} />
-        </>
+        </div>
     );
 
 }

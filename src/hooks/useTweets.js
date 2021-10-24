@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getTweets, createTweet } from '../services/tweetService'
+import { getTweets, createTweet, deleteTweet } from '../services/tweetService'
 import { createComment } from '../services/commentsService'
 import { createLike } from '../services/likesService'
 
@@ -13,7 +13,7 @@ export const useTweets = () => {
             const response = await getTweets();
             setTweets(response.data);
             setLoadingT(false);
-        }, 500);
+        }, 200);
     }
     useEffect(() => {
         listTweets();
@@ -42,11 +42,24 @@ export const useTweets = () => {
             });
     }
 
+    const deleteMyTweet = (tweetId, userId) => {
+        deleteTweet(tweetId, userId)
+            .then(data => {
+                console.log(data)
+                listTweets()
+
+            })
+            .catch((err) => {
+                console.log("err", err);
+            });
+    }
+
     return {
         loadingT,
         tweets,
         addTweet,
         createComment,
-        createLike
+        createLike,
+        deleteMyTweet
     }
 }
