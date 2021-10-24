@@ -3,14 +3,10 @@ import { getTrending } from '../services/trendingService'
 
 const randomUsers = ["NoticiasCNN_Es", 'FoxNews', 'zonacero', 'CanalTelecaribe', 'Cristiano']
 
-function getRandomInt() {
-    return Math.floor(Math.random() * (4 - 0)) + 0;
-}
-
 export const useTrending = () => {
     const [trendings, setTrendings] = useState([])
     const [loading, setLoading] = useState(false)
-    const [username, setUsername] = useState(randomUsers[getRandomInt()])
+    const [username, setUsername] = useState(true)
 
     const listTrendings = () => {
         setLoading(true);
@@ -25,8 +21,9 @@ export const useTrending = () => {
         }, 500);
     }
     useEffect(() => {
-        if (username !== '') {
+        if (username) {
             listTrendings()
+            setUsername(false)
         }
     }, [username]);
 

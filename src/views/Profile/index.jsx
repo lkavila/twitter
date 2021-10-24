@@ -11,7 +11,8 @@ import tweetsJson from '../../components/TweetCard/tweets.json'
 
 const Profile = () => {
     const history = useHistory()
-    const { username } = useParams();
+    const { username, _id } = useParams();
+    console.log(_id)
     const user = usersJson.users.find(u => u.username === username)
     const tweets = tweetsJson.tweets
     const [modal, setModal] = useState(false);
@@ -24,7 +25,10 @@ const Profile = () => {
                         <section className='container max-w-2xl border border-grey-lighter' name="profile">
                             <section name="top-profile" className="cursor-pointer flex flex-row items-center">
                                 <div className="hover:bg-grey-lighter w-10 h-10 m-2 rounded-full">
-                                    <HiArrowLeft size={17} className="m-3" />
+                                    <ActionButton onClick={() => history.goBack()}>
+                                        <HiArrowLeft size={20} />
+                                    </ActionButton>
+
                                 </div>
                                 <div className="px-2">
                                     <h1 className="font-bold text-xl">Profile</h1>
@@ -55,6 +59,7 @@ const Profile = () => {
             </>
         )
     }
+    console.log("hee",history)
     return (
         <>
             <Metadata title="Perfil Twitter" description="Twitter es la mejor red social que existe, mira tu perfil aquí." route="profile" />
