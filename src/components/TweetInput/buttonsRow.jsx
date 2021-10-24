@@ -19,7 +19,6 @@ const Icon = (Icon, display = 'block') => {
 const ButtonsRow = ({ content, addTweet = {}, setContent, createComment = {}, _id, setOpen = {}, setTweetReplies = {}, tweetReplies = {} }) => {
     const [disable, setDisable] = useState(false)
     const handleClik = () => {
-        console.log(content)
         if (_id) {
             createComment(content, _id)
             if (typeof (setTweetReplies) === 'function')
@@ -28,10 +27,11 @@ const ButtonsRow = ({ content, addTweet = {}, setContent, createComment = {}, _i
             addTweet(content)
         }
         setContent("")
-        setOpen(false)
+        if (typeof (setOpen) === 'function')
+            setOpen(false)
     }
     useEffect(() => {
-        if (content.length > 280) {
+        if (content.length > 280 && content.length < 1) {
             setDisable(true)
         } else {
             setDisable(false)
@@ -49,13 +49,24 @@ const ButtonsRow = ({ content, addTweet = {}, setContent, createComment = {}, _i
             </div>
 
             <div className="container space-x-4 xs:justify-end justify-start items-center grid grid-flow-col auto-cols-max gap-0">
-                <div className="-mr-6 -ml-6">
-                    <CircularProgress content={content} />
-                </div>
-                <p>|</p>
-                <div className="border border-grey-light rounded-full w-6 h-6 hover:bg-blueTwitter-lighter content-center">
-                    <BsPlus color="dodgerblue" size="21"></BsPlus>
-                </div>
+
+                {
+                    content.length > 0
+                        ? <>
+                            <div className="-mr-6 -ml-6">
+                                <CircularProgress content={content} />
+                            </div>
+                            <div className="border-r border-grey-light h-4 w-1" />
+                            <div className="border border-grey-light rounded-full w-6 h-6 hover:bg-blueTwitter-lighter content-center">
+                                <BsPlus color="dodgerblue" size="21"></BsPlus>
+                            </div>
+                        </>
+                        :
+                        <></>
+                }
+
+
+
 
                 <div>
                     <Button onClick={handleClik} to={'#'} title='Tweet' className={`rounded-full text-center ${disable ? "cursor-default opacity-60 hover:bg-blueTwitter" : ""}`} width='w-24' height='h-8' />
