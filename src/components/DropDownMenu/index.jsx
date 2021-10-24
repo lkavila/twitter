@@ -11,6 +11,7 @@ const MenuItem = (Icon, text, func, params, textColor, iconColor) => {
     const handleClick = () => {
         if (func !== undefined) {
             if (params !== undefined) {
+                console.log(...params)
                 func(...params);
             } else {
                 func();
@@ -21,9 +22,9 @@ const MenuItem = (Icon, text, func, params, textColor, iconColor) => {
     return (
         <Menu.Item>
             {({ active }) => (
-                <div className="flex flex-row space-x-3 hover:bg-grey-lighter">
+                <div className="flex flex-row space-x-3 hover:bg-grey-lighter" onClick={handleClick}>
                     {Icon ? <Icon size={18} color={iconColor} className="mt-2 ml-2" /> : null}
-                    <p onClick={handleClick}
+                    <p
                         className={classNames(
                             active ? `bg-gray-100 text-gray-900 ${textColor}` : `text-gray-700 ${textColor}`,
                             'block py-2 text-sm '

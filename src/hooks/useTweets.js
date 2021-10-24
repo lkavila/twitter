@@ -13,7 +13,7 @@ export const useTweets = () => {
             const response = await getTweets();
             setTweets(response.data);
             setLoadingT(false);
-        }, 500);
+        }, 200);
     }
     useEffect(() => {
         listTweets();
@@ -42,14 +42,11 @@ export const useTweets = () => {
             });
     }
 
-    const deleteMyTweet = (tweetId) => {
-        deleteTweet(tweetId)
+    const deleteMyTweet = (tweetId, userId) => {
+        deleteTweet(tweetId, userId)
             .then(data => {
-                if (data.id || data.message) {
-                    setTweets(tweets.filter(tweet => tweet._id !== tweetId))
-                } else {
-                    console.log(data)
-                }
+                console.log(data)
+                listTweets()
 
             })
             .catch((err) => {

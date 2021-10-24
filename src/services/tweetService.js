@@ -14,9 +14,10 @@ const getTweets = async () => {
 }
 
 
-const deleteTweet = async (tweetId) => {
+const deleteTweet = async (tweetId, userId) => {
     const data = {
-        tweetId: tweetId
+        tweetId: tweetId,
+        id: userId
     }
     const json = await deleteR("tweets", data);
     return json;

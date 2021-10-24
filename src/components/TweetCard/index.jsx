@@ -11,15 +11,16 @@ import { VscPinned } from 'react-icons/vsc'
 import { useTweets } from '../../hooks/useTweets';
 
 const SmallTweet = (props) => {
-    console.log(props)
     const { _id, user, createdAt, content, comment, image = null, replies = 0, retweets = 0, likes = 0, createComment = {}, createLike = {}, autor } = props
     const { name, username } = user;
-    const myUserName = useContext(AuthContext).user.username;
+    const myUser = useContext(AuthContext).user;
+    const myUsername = myUser.username
+    const userId = myUser._id
     const { deleteMyTweet } = useTweets();
     let opctions;
-    if (myUserName === username) {
+    if (myUsername === username) {
         opctions =
-            [{ Icon: BsTrash, text: "Delete", iconColor: "red", textColor: "text-redTwitter-realRed", func: deleteMyTweet, params: [_id] },
+            [{ Icon: BsTrash, text: "Delete", iconColor: "red", textColor: "text-redTwitter-realRed", func: deleteMyTweet, params: [_id, userId] },
             { Icon: VscPinned, text: "Pin to your profile" },
             { Icon: BsCardList, text: `Add/remove @${username} from Lists` },
             { Icon: BsCodeSlash, text: `Embed Tweet` },
@@ -63,6 +64,8 @@ const SmallTweet = (props) => {
                     <div className="hover:bg-blueTwitter-lighter p-2 w-8 h-8 rounded-full -mb-1" >
                         <DropDownMenu elements={opctions} />
                     </div>
+                </div>
+                <div name="content-tweet">
                     <Link to={`/username/tweet/${_id}`}>
                         <div name="contenido-tweet" className="max-w-screen-sm">
                             <article className={`text-sm text-grey-contentTwitter mb-2.5 whitespace-pre-wrap ${breakContent}`} >
