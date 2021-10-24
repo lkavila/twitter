@@ -9,7 +9,7 @@ const createTweet = async (text) => {
 }
 
 const getTweets = async () => {
-    const json = await get("tweets");
+    const json = await get("tweets?limit=20");
     return json;
 }
 
