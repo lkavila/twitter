@@ -1,11 +1,10 @@
-import { useContext } from 'react';
+
+
 import { MdMoreHoriz } from 'react-icons/md'
 import { Avatar } from '../../'
-import { AuthContext } from "../../../context/AuthContext";
 import { useHistory } from "react-router";
 
-const NavButton = () => {
-    const { user, logout } = useContext(AuthContext);
+const NavButton = ({ user, logout }) => {
     const history = useHistory();
     const handleLogOut = () => {
         logout();
@@ -17,10 +16,10 @@ const NavButton = () => {
             <Avatar size='10' />
             <div className='xl:flex flex-col items-start hidden'>
                 <span className='text-sm font-bold'>
-                    {user.name}
+                    {user?.name}
                 </span>
                 <span>
-                    @{user.username}
+                    @{user?.username}
                 </span>
 
             </div>
