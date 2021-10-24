@@ -1,8 +1,20 @@
 # Getting Started with Create React App
 
+
+## Local API
+This is the repository used to start this app without problems
+https://github.com/lkavila/my-twitter-api
+Originalmente tomado de: https://github.com/jestrade/api-twitter
+
+## Remote API
+The backend api is deployed in this heroku server:
+https://api-twitter-node.herokuapp.com/
+
 ## Host
 You can see the proyect running in the next link thanks to firebase hosting.
 [Demo Twitter](https://mytwitter-5fc2c.web.app/).
+
+
 
 ### ENV file required
 #### Variables below are for google analytics
