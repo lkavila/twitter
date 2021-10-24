@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 import Metadata from "../../lib/metadata";
-import { Avatar, TweetCardSmall, TrendingsBar, ActionButton, SetupModal } from '../../components'
+import { Avatar, TweetCardSmall, TrendingsBar, ActionButton, SetupModal, Spinner } from '../../components'
 import { HiArrowLeft, HiOutlineMail } from 'react-icons/hi'
 import { BsThreeDots } from 'react-icons/bs'
 import { CgCalendarDates } from 'react-icons/cg'
 import Template from '../../template'
-import usersJson from './users.json'
-import tweetsJson from '../../components/TweetCard/tweets.json'
+import { useProfile } from '../../hooks/useProfile'
+import { AuthContext } from '../../context/AuthContext'
 
 const Profile = () => {
+
     const history = useHistory()
-    const { username } = useParams();
-    const user = usersJson.users.find(u => u.username === username)
-    const tweets = tweetsJson.tweets
+    const { username } = useParams()
+    const { tweets, user, loading, setUsername, addComment, addLike, deleteMyTweet } = useProfile()
     const [modal, setModal] = useState(false);
+    const myUsername = useContext(AuthContext)?.user?.username;
+
+    useEffect(() => {
+        setUsername(username)
+    })
+
+
     if (user === undefined) {
         return (
             <>
@@ -24,7 +31,10 @@ const Profile = () => {
                         <section className='container max-w-2xl border border-grey-lighter' name="profile">
                             <section name="top-profile" className="cursor-pointer flex flex-row items-center">
                                 <div className="hover:bg-grey-lighter w-10 h-10 m-2 rounded-full">
-                                    <HiArrowLeft size={17} className="m-3" />
+                                    <ActionButton onClick={() => history.goBack()}>
+                                        <HiArrowLeft size={20} />
+                                    </ActionButton>
+
                                 </div>
                                 <div className="px-2">
                                     <h1 className="font-bold text-xl">Profile</h1>
@@ -73,8 +83,7 @@ const Profile = () => {
                                 </div>
                             </section>
                             <section name="datos-usuario">
-                                <div className="cursor-pointer h-29 max-w-full">
-                                    <img alt="portada" src={user.profilePortada} />
+                                <div className="bg-grey bg-opacity-40 max-w-full h-48">
                                 </div>
 
                                 <div className="flex flex-row justify-between mr-4 ml-4">
@@ -87,7 +96,7 @@ const Profile = () => {
                                     <SetupModal open={modal} setOpen={setModal} />
 
                                     {
-                                        user.username === 'Ema' ?
+                                        user.username && (user.username === myUsername ?
                                             <div>
                                                 <button className="mt-3 rounded-full w-36 border-grey-light border h-9 hover:bg-opacity-75 hover:bg-grey-lighter font-bold"
                                                     onClick={() => setModal(true)}>
@@ -103,7 +112,7 @@ const Profile = () => {
                                                     <HiOutlineMail size={20} />
                                                 </ActionButton>
                                                 <ActionButton fill title='Follow' />
-                                            </div>
+                                            </div>)
                                     }
 
                                 </div>
@@ -143,11 +152,17 @@ const Profile = () => {
                                 <button className="hover:bg-grey-light w-36 font-bold">Likes</button>
                             </section>
                             <div>
-                                {tweets.filter(t => t.username === user.username).map((tweet) =>
-                                    <section>
-                                        <TweetCardSmall {...tweet} />
-                                    </section>
+
+                                {loading ? (
+                                    <Spinner size={8} />
+                                ) : (
+                                    tweets?.map((tweet, index) =>
+                                        <section key={index}>
+                                            <TweetCardSmall createComment={addComment} createLike={addLike} deleteMyTweet={deleteMyTweet} replies={tweet.comments?.length}  {...tweet} user={user} />
+                                        </section>
+                                    )
                                 )}
+
                             </div>
 
                         </section>

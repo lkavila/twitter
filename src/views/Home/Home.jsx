@@ -5,7 +5,7 @@ import Template from '../../template'
 import { useTweets } from '../../hooks/useTweets'
 
 const Home = () => {
-    const { tweets, loadingT, addTweet, createComment, createLike } = useTweets()
+    const { tweets, loadingT, addTweet, addComment, addLike, deleteMyTweet } = useTweets()
     return (
         <>
             <Metadata title={'Welcome to twitter.'} description="Twitter is the best social network out there, log in here." route='home' ></Metadata>
@@ -25,7 +25,7 @@ const Home = () => {
                                 ) : (
                                     tweets?.map((tweet, index) =>
                                         <section key={index}>
-                                            <TweetCardSmall createComment={createComment} createLike={createLike} replies={tweet.comments?.length}  {...tweet} />
+                                            <TweetCardSmall createComment={addComment} createLike={addLike} deleteMyTweet={deleteMyTweet} replies={tweet.comments?.length}  {...tweet} />
                                         </section>
                                     )
                                 )}
