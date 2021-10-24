@@ -8,6 +8,7 @@ import { IoVolumeMuteOutline } from 'react-icons/io5'
 import { MdBlock } from 'react-icons/md'
 import { FiBarChart2 } from 'react-icons/fi'
 import { VscPinned } from 'react-icons/vsc'
+import getDate from '../../lib/date';
 
 const SmallTweet = (props) => {
     const { _id, user, createdAt, content, comment, image = null, replies = 0, retweets = 0, likes = 0, createComment = {}, createLike = {}, deleteMyTweet, autor } = props
@@ -52,9 +53,11 @@ const SmallTweet = (props) => {
             </Link>
             <div name="tweet" className="container max-w-screen-sm">
 
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between text-sm text-grey-textTwitter">
                     <Link to={`/${username}`} name="info-usuario" >
-                        <p className="text-sm text-grey-textTwitter"> <strong className="text-black">{name}</strong> @{username} <span className="mb-4 text-md">.</span> {createdAt}</p>
+                        <strong className="text-black ">{name}</strong> @{username}
+                        <span className="mb-4 text-md m-1">.</span>
+                        <span className="" title={new Date(createdAt)}> {getDate(createdAt)} </span>
                     </Link>
 
                     <div className="hover:bg-blueTwitter-lighter p-2 w-8 h-8 rounded-full -mb-1" >

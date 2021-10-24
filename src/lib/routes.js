@@ -16,65 +16,65 @@ const routes = {
         {
             title: "Home",
             path: "/",
-            component: Root,
+            Component: Root,
         },
         {
             title: "Login",
             path: "/login",
-            component: Login,
+            Component: Login,
         },
         {
             title: "Sign Up",
             path: "/signup",
-            component: SignUp,
+            Component: SignUp,
         },
         {
             title: "Password reset: search user",
             path: "/recover-password",
-            component: RecoverPassword,
+            Component: RecoverPassword,
         },
     ],
     restricted: [
         {
             title: "Home",
             path: "/home",
-            component: Home,
+            Component: Home,
         },
 
         {
             title: "Tweet page",
             path: "/username/tweet/:id",
-            component: TweetPage,
+            Component: TweetPage,
         },
         {
             title: "Explore",
             path: "/explore",
-            component: Explore,
+            Component: Explore,
         },
         {
             title: "Notifications",
             path: "/notifications",
-            component: Notifications,
+            Component: Notifications,
         },
         {
             title: "Lists",
             path: "/lists",
-            component: Lists,
+            Component: Lists,
         },
         {
             title: "Messages",
             path: "/messages",
-            component: Messages,
+            Component: Messages,
         },
         {
             title: "Bookmarks",
             path: "/bookmarks",
-            component: Bookmarks,
+            Component: Bookmarks,
         },
         {
             title: "Profile",
             path: "/:username",
-            component: Profile,
+            Component: Profile,
         },
     ]
 }
