@@ -61,7 +61,7 @@ const SmallTweet = (props) => {
                     <Link to={`/${username}`} name="info-usuario" >
                         <strong className="text-black ">{name}</strong> @{username}
                         <span className="mb-4 text-md m-1">.</span>
-                        <span className="" title={Date(createdAt)}> {getDate(createdAt)} </span>
+                        <span className="" title={new Date(createdAt)}> {getDate(createdAt)} </span>
                     </Link>
 
                     <div className="hover:bg-blueTwitter-lighter p-2 w-8 h-8 rounded-full -mb-1" >
