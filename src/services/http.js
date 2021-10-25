@@ -1,5 +1,4 @@
 let httpAPI = process.env.NODE_ENV === "production" ? process.env.REACT_APP_HTTP_API_PRO : process.env.REACT_APP_HTTP_API_DEV;
-httpAPI = "https://api-twitter-node.herokuapp.com/api"
 
 console.log("Esta es la ruta de la api:", httpAPI)
 const get = async (endpoint) => {
