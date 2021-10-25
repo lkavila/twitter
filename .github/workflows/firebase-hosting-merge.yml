@@ -20,6 +20,7 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYTWITTER_5FC2C }}"
           channelId: live
           projectId: "${{ secrets.REACT_APP_PROJECT_ID }}"
+        env:
           REACT_APP_API_KEY: "${{ secrets.REACT_APP_API_KEY }}"
           REACT_APP_AUTH_DOMAIN: "${{ secrets.REACT_APP_AUTH_DOMAIN }}"
           REACT_APP_PROJECT_ID: "${{ secrets.REACT_APP_PROJECT_ID }}"
