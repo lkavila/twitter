@@ -4,20 +4,20 @@
 ## Local API
 This is the repository used to start this app without problems
 https://github.com/lkavila/my-twitter-api
-Originalmente tomado de: https://github.com/jestrade/api-twitter
+Originally taken from: https://github.com/jestrade/api-twitter
 
 ## Remote API
 The backend api is deployed in this heroku server:
 https://api-twitter-node.herokuapp.com/
 
 ## Host
-You can see the proyect running in the next link thanks to firebase hosting.
-[Demo Twitter](https://mytwitter-5fc2c.web.app/).
+You can see the FRONTEND proyect running in the next link thanks to firebase hosting.
+[Demo Twitter](https://mytwitter-5fc2c.firebaseapp.com/).
 
 
 
 ### ENV file required
-#### Variables below are for google analytics
+#### Variables below are for google analytics and api url
 ```
 REACT_APP_API_KEY=
 REACT_APP_AUTH_DOMAIN=
@@ -26,6 +26,8 @@ REACT_APP_STORAGE_BUCKET=
 REACT_APP_MESSAGING_SENDER_ID=
 REACT_APP_APP_ID=
 REACT_APP_MEASUREMENT_ID=
+REACT_APP_HTTP_API_PRO=
+REACT_APP_HTTP_API_DEV=
 ```
 
 ### Firebase setup
